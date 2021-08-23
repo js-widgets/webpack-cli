@@ -1,0 +1,72 @@
+{
+  "name": "@js-widgets/webpack-cli",
+  "version": "1.0.0",
+  "description": "Builds the registry and compiles the widgets using webpack.",
+  "private": false,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "main": "src/index.ts",
+  "bin": {
+    "js-widgets-webpack-cli": "build/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:ci": "yarn test --watchAll=false --coverage",
+    "lint": "eslint .",
+    "lint:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|md)\" && yarn lint --fix",
+    "lint:ci": "yarn lint -o reports/eslint/issues.json -f json",
+    "lint-staged": "lint-staged"
+  },
+  "author": {
+    "name": "Mateu Aguiló Bosch",
+    "email": "mateu@mateuaguilo.com"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@formatjs/cli": "^4.2.33",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.3",
+    "@semantic-release/npm": "^7.1.3",
+    "@semantic-release/release-notes-generator": "^9.0.3",
+    "@types/debug": "^4.1.7",
+    "@types/glob": "^7.1.4",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.2",
+    "@types/semver": "^7.3.8",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "conventional-changelog-conventionalcommits": "^4.6.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "husky": "^7.0.2",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "semantic-release": "^17.4.7",
+    "ts-jest": "^27.0.5",
+    "ts-loader": "^9.2.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "ajv": "^8.6.2",
+    "ajv-formats": "^2.1.1",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "commander": "^8.1.0",
+    "glob": "^7.1.7",
+    "mini-css-extract-plugin": "^2.2.0",
+    "semver": "^7.3.5",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}

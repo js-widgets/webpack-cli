@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`listFilesSync shows all the files 1`] = `
+Array [
+  "output/.gitignore",
+  "validProject/.widgetRegistry/main.js",
+]
+`;
