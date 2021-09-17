@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/js-widgets/webpack-cli/compare/v1.0.0...v1.1.0) (2021-09-17)
+
+
+### Features
+
+* add coverage badge to README.md ([378939e](https://github.com/js-widgets/webpack-cli/commit/378939e8395793e6914ca53c8a788fe7ca46aa9b))
+
 # 1.0.0 (2021-09-17)
 
 
