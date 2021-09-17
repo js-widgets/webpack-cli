@@ -97,9 +97,7 @@ describe('validateOptions', () => {
       await validateOptions(rawOptions);
       expect(false).toBe(true);
     } catch (error: any) {
-      expect(error.message).toMatch(
-        /^Unable to find the main config file for the registry: /,
-      );
+      expect(error.message).toMatch(/^Unable to find the /);
     }
   });
 });

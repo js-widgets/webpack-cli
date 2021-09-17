@@ -16,16 +16,16 @@ jobs:
       - name: Install package dependencies
         run: yarn
       - run: yarn build
+      - name: Run Tests to Collect Coverage
+        run: yarn test
+      - name: Update Coverage Badge
+        run: mkdir -p www && npx make-coverage-badge --output-path ./www/coverage.svg
       - name: Semantic Release
         if: ${{ success() }}
         uses: cycjimmy/semantic-release-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Run Tests to Collect Coverage
-        run: yarn test
-      - name: Update Coverage Badge
-        run: mkdir -p www && npx make-coverage-badge --output-path ./www/coverage.svg
       - name: Deploy to GitHub Pages
         if: ${{ success() }}
         uses: crazy-max/ghaction-github-pages@v2
