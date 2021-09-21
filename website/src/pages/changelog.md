@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+title: Changelog
+---
 # [1.1.0](https://github.com/js-widgets/webpack-cli/compare/v1.0.0...v1.1.0) (2021-09-17)
 
 

@@ -18,8 +18,13 @@ jobs:
       - run: yarn build
       - name: Run Tests to Collect Coverage
         run: yarn test
+      - name: Build Docusaurus
+        run: |
+          cd website
+          yarn install
+          yarn build
       - name: Update Coverage Badge
-        run: mkdir -p www && npx make-coverage-badge --output-path ./www/coverage.svg
+        run: npx make-coverage-badge --output-path ./docs/build/img/coverage.svg
       - name: Semantic Release
         if: ${{ success() }}
         uses: cycjimmy/semantic-release-action@v2
@@ -31,7 +36,7 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: www
+          build_dir: website/build
           keep_history: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

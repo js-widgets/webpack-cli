@@ -1,0 +1,54 @@
+---
+sidebar_position: 3
+title: Widget Definition
+---
+import Link from '@docusaurus/Link';
+
+Once you have [configured the registry](./config/declare-registry) it's time to create a widget definitions for one of
+your components.
+
+Imagine you have a _Toast Notification_ component, [like this one](https://www.carbondesignsystem.com/components/notification/usage#toast-notifications). This is what it looks like in Storybook:
+
+![Toast Notification in Storybook](../../static/img/storybook-toast.png)
+
+## Widget Definition File
+Widget definition files are the files matched by [the `register` pattern](config/options/register) in the registry
+configuration. They usually match the pattern `*.widget.js`. So if we want to create a widget for the notification, we
+will need to create `src/components/notification/toast-notification.widget.js`. This leaves us with:
+
+```shell
+src/components/notification/toast-notification.ts
+src/components/notification/toast-notification.scss
+// highlight-next-line
+src/components/notification/toast-notification.widget.js
+```
+
+```js title="src/components/notification/toast-notification.widget.js"
+const path = require('path');
+
+module.exports = {
+  entry: path.join(__dirname, 'render-toast-notification.js'),
+  shortcode: 'toast-notification',
+  title: 'Toast Notification',
+  description: 'A notification element with a bit more context than the inline notification.',
+  status: 'wip'
+};
+```
+
+All the options are described in the schema and documented in [its own documentation site](https://js-widgets.github.io/js-widgets/registry-schema/).
+
+<Link
+  className="button button--secondary button--lg"
+  to="https://js-widgets.github.io/js-widgets/registry-schema/">
+  Documentation Site
+</Link>
+
+---
+
+Properties:
+
+  - [`shortcode`](https://js-widgets.github.io/js-widgets/registry-schema/#items_shortcode)
+  - [`title`](https://js-widgets.github.io/js-widgets/registry-schema/#items_title)
+  - [`description`](https://js-widgets.github.io/js-widgets/registry-schema/#items_description)
+  - [`status`](https://js-widgets.github.io/js-widgets/registry-schema/#items_status)
+  - `entry`: the path to [the render file](./render-file) for the component.

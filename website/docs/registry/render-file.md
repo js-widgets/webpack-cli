@@ -1,0 +1,100 @@
+---
+sidebar_position: 4
+title: Render File
+---
+Widgets are stand alone JS applications, but a component library only has components. To bridge that gap we need to
+create a render file. This is a file that will render a component in a `<div>` that the CMS will print on the page. The
+JavaScript application will render inside that `<div>`.
+
+Rendering a component is heavily dependent on the JS framework you are using. This step will look different for React,
+Vue, Angular, Web Components, ...
+
+:::caution Check the render function name!
+All the render files contain `window.renderXXXX`, where `XXXX` needs to be the same as the [`shortcode` property](./widget-definition) in [camel case](https://en.wikipedia.org/wiki/Camel_case).
+:::
+
+## Web Components
+```js title="src/components/notification/render-toast-notification.js"
+require('./toast-notification');
+
+/**
+ * Renders the widget.
+ *
+ * It renders a react application as the widget.
+ *
+ * @param {string} instanceId
+ *   The already present HTML element ID where the react app will be rendered.
+ * @param {string} langCode
+ *   The language code for internationalization purposes.
+ * @param {string} origin
+ *   Protocol and hostname where a JSONAPI endpoint is available.
+ * @param {Function} cb
+ *   A callback that executes after the widget has been rendered.
+ */
+const render = (instanceId, langCode, origin, cb) => {
+  const element = document.getElementById(instanceId);
+  if (!element) {
+    return;
+  }
+  // Just print the custom HTML element inside of the div and call the callback.
+  element.innerHTML = `<bx-toast-notification
+    title="${element.getAttribute('data-title')}"
+    subtitle="${element.getAttribute('data-description')}"
+    caption="${element.getAttribute('data-caption')}"
+    kind="${element.getAttribute('data-kind')}"
+  />`;
+  // Execute the callback so the parent process knows we are done rendering.
+  cb(element);
+};
+
+window.renderToastNotification = render;
+```
+
+## React
+
+```js title="src/components/notification/render-toast-notification.js"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.scss';
+import ToastNotification from './components/Widget';
+import * as serviceWorker from './core/bin/serviceWorker';
+import { IntlProvider } from 'react-intl';
+import i18n from './core/bin/i18n.js';
+
+/**
+ * Renders the widget.
+ *
+ * It renders a react application as the widget.
+ *
+ * @param {string} instanceId
+ *   The already present HTML element ID where the react app will be rendered.
+ * @param {string} langCode
+ *   The language code for internationalization purposes.
+ * @param {string} origin
+ *   Protocol and hostname where a JSONAPI endpoint is available.
+ * @param {Function} cb
+ *   A callback that executes after the widget has been rendered.
+ */
+function render(instanceId, langCode, origin, cb) {
+  const element = document.getElementById(instanceId);
+  const translation = new i18n(langCode || serviceWorker.getUrlLocale());
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <IntlProvider locale={translation.locale} messages={translation.messages}>
+        <ToastNotification
+          title={element.getAttribute('data-title')}
+          subtitle={element.getAttribute('data-description')}
+          caption={element.getAttribute('data-caption')}
+          kind={element.getAttribute('data-kind')}
+        />
+      </IntlProvider>
+    </React.StrictMode>,
+    element,
+    () => cb(element),
+  );
+  serviceWorker.unregister();
+}
+
+window.renderToastNotification = render;
+```
