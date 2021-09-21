@@ -24,7 +24,7 @@ jobs:
           yarn install
           yarn build
       - name: Update Coverage Badge
-        run: npx make-coverage-badge --output-path ./docs/build/img/coverage.svg
+        run: npx make-coverage-badge --output-path ./website/build/img/coverage.svg
       - name: Semantic Release
         if: ${{ success() }}
         uses: cycjimmy/semantic-release-action@v2
