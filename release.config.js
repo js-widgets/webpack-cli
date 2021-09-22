@@ -9,6 +9,11 @@ module.exports = {
     ],
     ['@semantic-release/npm', { tarballDir: 'release' }],
     ['@semantic-release/github', { assets: 'release/*.tgz' }],
-    '@semantic-release/git',
+    [
+      '@semantic-release/git',
+      {
+        assets: ['website/src/pages/changelog.md'],
+      },
+    ],
   ],
 };
