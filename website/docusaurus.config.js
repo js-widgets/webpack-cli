@@ -75,7 +75,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 },
                 {
                   label: 'Integration',
-                  to: '/docs/integration/widget-sources',
+                  to: '/docs/integration/registry-sources',
                 },
               ],
             },
