@@ -21,7 +21,7 @@ jobs:
         run: yarn test
       - name: Update Coverage Badge
         run: |
-          mkdir -p website/build
+          mkdir -p website/build/img
           npx make-coverage-badge --output-path ./website/build/img/coverage.svg
       - name: Release to NPM using Semantic Release
         if: ${{ success() }}
