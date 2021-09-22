@@ -10,9 +10,9 @@
   "engines": {
     "node": ">=14"
   },
-  "main": "build/src/cli.js",
+  "main": "build/src/index.js",
   "bin": {
-    "@js-widgets/webpack-cli": "build/src/cli.js"
+    "@js-widgets/webpack-cli": "build/src/index.js"
   },
   "scripts": {
     "build": "tsc",
