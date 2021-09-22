@@ -50,6 +50,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               position: 'left',
               label: 'Documentation',
             },
+            { to: '/changelog', label: 'Changelog', position: 'left' },
             { to: '/videos', label: 'Videos', position: 'left' },
             {
               href: 'https://github.com/js-widgets/webpack-cli',
