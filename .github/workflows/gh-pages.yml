@@ -20,7 +20,9 @@ jobs:
       - name: Run Tests to Collect Coverage
         run: yarn test
       - name: Update Coverage Badge
-        run: npx make-coverage-badge --output-path ./website/build/img/coverage.svg
+        run: |
+          mkdir -p website/build
+          npx make-coverage-badge --output-path ./website/build/img/coverage.svg
       - name: Release to NPM using Semantic Release
         if: ${{ success() }}
         uses: cycjimmy/semantic-release-action@v2
