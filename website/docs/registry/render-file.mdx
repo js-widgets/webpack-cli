@@ -1,7 +1,10 @@
 ---
 sidebar_position: 4
-title: Render File
+title: 3. Render File
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Widgets are stand alone JS applications, but a component library only has components. To bridge that gap we need to
 create a render file. This is a file that will render a component in a `<div>` that the CMS will print on the page. The
 JavaScript application will render inside that `<div>`.
@@ -13,7 +16,18 @@ Vue, Angular, Web Components, ...
 All the render files contain `window.renderXXXX`, where `XXXX` needs to be the same as the [`shortcode` property](./widget-definition) in [camel case](https://en.wikipedia.org/wiki/Camel_case).
 :::
 
-## Web Components
+<Tabs
+  defaultValue="react"
+  values={[
+    { label: 'Web Components', value: 'wc' },
+    { label: 'React', value: 'react' },
+    { label: 'Vue', value: 'vue' },
+    { label: 'Angular', value: 'angular' },
+  ]}
+>
+
+<TabItem value="wc">
+
 ```js title="src/components/notification/render-toast-notification.js"
 require('./toast-notification');
 
@@ -50,7 +64,8 @@ const render = (instanceId, langCode, origin, cb) => {
 window.renderToastNotification = render;
 ```
 
-## React
+</TabItem>
+<TabItem value="react">
 
 ```js title="src/components/notification/render-toast-notification.js"
 import React from 'react';
@@ -98,3 +113,24 @@ function render(instanceId, langCode, origin, cb) {
 
 window.renderToastNotification = render;
 ```
+
+</TabItem>
+
+<TabItem value="vue">
+
+:::note
+I have not worked with Vue widgets yet. If you have worked with Vue and you want to provide the example code, please
+find the Edit link below and edit this page.
+:::
+
+</TabItem>
+
+<TabItem value="angular">
+
+:::note
+I have not worked with Angular widgets yet. If you have worked with Angular and you want to provide the example code, please
+find the Edit link below and edit this page.
+:::
+
+</TabItem>
+</Tabs>

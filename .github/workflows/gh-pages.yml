@@ -15,7 +15,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install package dependencies
         run: yarn
-      - run: yarn build
+      - name: Build Typescript project
+        run: yarn build
       - name: Run Tests to Collect Coverage
         run: yarn test
       - name: Build Docusaurus
@@ -23,9 +24,10 @@ jobs:
           cd website
           yarn install
           yarn build
+          cd -
       - name: Update Coverage Badge
         run: npx make-coverage-badge --output-path ./website/build/img/coverage.svg
-      - name: Semantic Release
+      - name: Release to NPM using Semantic Release
         if: ${{ success() }}
         uses: cycjimmy/semantic-release-action@v2
         env:

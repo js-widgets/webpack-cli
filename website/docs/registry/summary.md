@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Goal
+title: Summary
 ---
 The widget registry aims to produce **two pieces from your component library repository**, so they can be uploaded to a publicly accessible location:
 

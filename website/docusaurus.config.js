@@ -26,12 +26,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             editUrl:
               'https://github.com/js-widgets/webpack-cli/edit/main/website/',
           },
-          blog: {
-            showReadingTime: true,
-            // Please change this to your repo.
-            editUrl:
-              'https://github.com/js-widgets/webpack-cli/edit/main/website/blog/',
-          },
+          blog: false,
           theme: {
             customCss: require.resolve('./src/css/custom.css'),
           },
@@ -56,7 +51,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               label: 'Documentation',
             },
             { to: '/changelog', label: 'Changelog', position: 'left' },
-            { to: '/blog', label: 'Blog', position: 'left' },
+            { to: '/videos', label: 'Videos', position: 'left' },
             {
               href: 'https://github.com/js-widgets/webpack-cli',
               label: 'GitHub',
@@ -74,44 +69,35 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                   label: 'Tutorial',
                   to: '/docs/intro',
                 },
-              ],
-            },
-            {
-              title: 'Community',
-              items: [
                 {
-                  label: 'Stack Overflow',
-                  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                  label: 'Widget Registry',
+                  to: '/docs/registry/summary',
                 },
                 {
-                  label: 'Discord',
-                  href: 'https://discordapp.com/invite/docusaurus',
-                },
-                {
-                  label: 'Twitter',
-                  href: 'https://twitter.com/docusaurus',
+                  label: 'Integration',
+                  to: '/docs/integration/widget-sources',
                 },
               ],
             },
             {
-              title: 'More',
+              title: 'Open Source',
               items: [
-                {
-                  label: 'Blog',
-                  to: '/blog',
-                },
                 {
                   label: 'GitHub',
-                  href: 'https://github.com/facebook/docusaurus',
+                  href: 'https://github.com/js-widgets/webpack-cli',
+                },
+                {
+                  label: 'Registry Boilerplate',
+                  href: 'https://github.com/js-widgets/widget-registry-boilerplate',
                 },
               ],
             },
           ],
-          copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
         },
         prism: {
-          theme: lightCodeTheme,
+          theme: darkCodeTheme,
           darkTheme: darkCodeTheme,
+          additionalLanguages: ['php', 'jsx'],
         },
       }),
   }
