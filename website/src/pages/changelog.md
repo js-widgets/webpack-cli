@@ -1,3 +1,11 @@
+## [1.1.5](https://github.com/js-widgets/webpack-cli/compare/v1.1.4...v1.1.5) (2021-09-23)
+
+
+### Bug Fixes
+
+* add shebang for node execution ([c423c26](https://github.com/js-widgets/webpack-cli/commit/c423c26458d53159cb4c99f2f1d660627061ff57))
+* revert remove changelog ([23f4c40](https://github.com/js-widgets/webpack-cli/commit/23f4c401c71657b00bc7c22121e5a249f4290656))
+
 ---
 sidebar_position: 1
 title: Changelog
