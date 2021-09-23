@@ -1,0 +1,111 @@
+---
+sidebar_position: 3
+title: 2. Build the Registry
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Once you have configured the registry with [`.widgetRegistry/main.js`](./registry/summary) and created the
+[widget definition (`*.widget.js`)](./registry/widget-definition), and the [render file](./registry/render-file), it's time to run the CLI
+to compile all the widgets and create the registry JSON file.
+
+## Compile the Registry
+To get the CLI help information type:
+```shell
+npx @js-widgets/webpack-cli --help
+```
+
+By using `npx` we avoid having to install the CLI in our machine and keeping it up to date.
+
+At the time of writing this the output was:
+
+```title="npx @js-widgets/webpack-cli --help"
+Usage: js-widgets-webpack-cli [options] <path>
+
+Arguments:
+  path                            Path to the project containing the .widgetRegistry directory.
+
+Options:
+  -v, --version                   output the version number
+  -d, --debug                     output extra debugging
+  --existing-registry <url>       HTTP URL to the existing registry. Used to get all the versions of all the widgets
+                                  in this registry. Omit this to start a new registry from scratch.
+  --output-dir <path>             a path to a directory where to save all the compiled widgets and the registry.
+                                  CAUTION: the directory will be emptied.
+  --omit-missing                  when used, widgets in the existing registry that cannot be found will not appear in
+                                  the new registry.
+  --new-version <version-string>  the new version for the widgets being compiled. If none provided a new version will
+                                  be automatically generated if possible.
+  -h, --help                      display help for command
+```
+
+Let's imagine your component library is at `/home/john/workspace/js/my-project-components`. This folder is where you
+created the `.widgetRegistry` folder during [the initial setup](./registry/config/declare-registry).
+
+<Tabs
+  defaultValue='update'
+  values={[
+    { label: 'Create a Registry', value: 'create' },
+    { label: 'Update a Registry', value: 'update' },
+  ]}
+>
+
+<TabItem value='update'>
+Once you already have a registry uploaded in a public location and it's being actively used, you need to provide it
+to the CLI. This is so the automatic versioning process can guess the correct new version.
+
+Widgets that exist in the provided registry that don't exist in the project being compiled will be copied over to the
+newly created `registry.json`. If you don't want that to happen, use the `--omit-missing` flag.
+
+```shell title="Compile without setting a version"
+npx @js-widgets/webpack-cli \
+  --existing-registry https://s3.acme.us-east-1.amazonaws.com/marketing-site/registry.json \
+  --output-dir /tmp/widget-registry
+```
+
+When the `--new-version` option is omitted, the version will be calculated from the latest version in the widgets on the
+existing registry.
+
+:::note
+There is a relationship between the value in `--existing-registry` and the
+[`directoryUrl`](./registry/config/options/directoryUrl) that gets stored in the final `registry.json`.
+:::
+</TabItem>
+<TabItem value='create'>
+When you create the registry for the first time you don't have an `--existing-registry` to provide. If that is your case
+you have three options:
+
+  1. Create an empty registry in the desired location with an empty array: `[]`.
+  1. Provide the URL where you _intend_ this registry to live.
+  1. Omit the `--existing-registry` option. This requires the [`directoryUrl`](./registry/config/options/directoryUrl)
+     option to contain a fully qualified URL.
+
+```shell title="Compile without setting a version"
+npx @js-widgets/webpack-cli \
+  --existing-registry https://s3.acme.us-east-1.amazonaws.com/marketing-site/registry.json \
+  --output-dir /tmp/widget-registry
+  --new-version 1.0.0
+```
+
+If you omit the `--new-version` option on new registries, the initial version will be set to `0.1.0`.
+</TabItem>
+</Tabs>
+
+## Upload the Registry
+Once the compilation process ends successfully, you need to upload the result to a public location of your choice. This
+can be a cloud storage solution, a custom HTTP server, etc. The only requirement is that the files resulting from the
+compilation need to be accessible via HTTP.
+
+```title="Resulting files from the compilation example"
+output
+├── registry.json
+└── widgets
+    ├── inline-notification
+    │   └── js
+    │       └── main.js
+    └── toast-notification
+        └── js
+            └── main.js
+```
+
+Re-visit [the summary page](./registry/summary) for more info.

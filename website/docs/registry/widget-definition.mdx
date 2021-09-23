@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: 2. Widget Definition
+title: 1.2. Widget Definition
 ---
 import Link from '@docusaurus/Link';
 
@@ -43,6 +43,75 @@ All the options are described in the schema and documented in [its own documenta
   Documentation Site
 </Link>
 
+## Configurable Options
+One of the most powerful features of widgets is that they allow JS developers to expose component props to CMS
+editors.
+
+In our _Toast Notification_ example this translate in letting editors choose the `title` of the notification, the
+`body`, `caption`, and the notification `kind`.
+
+These options are defined in the widget definition file. As a widget developer you need to describe the input CMS
+editors will have available. Then in the [_render file_](./render-file) you will take that eventual editorial input
+and feed it to the component.
+
+The widget definition file needs to contain the necessary information for the CMS integration to render a form. The CMS
+will be responsible to parse the widget registry, take the section for the widget definition, inspect the
+`settingsSchema` property, and present a form to the editor appropriate to collect that input.
+
+The syntax to describe the configurable options is the [JSON Schema standard](https://json-schema.org).
+
+Let's add three text boxes and one radio button to collect the _Toast Notification_ options.
+
+```js title="src/components/notification/toast-notification.widget.js"
+const path = require('path');
+
+module.exports = {
+  entry: path.join(__dirname, 'render-toast-notification.js'),
+  shortcode: 'toast-notification',
+  title: 'Toast Notification',
+  description: 'A notification element with a bit more context than the inline notification.',
+  status: 'wip',
+  // highlight-start
+  settingsSchema: {
+    type: 'object',
+    additionalProperties: false,
+    properties: {
+      fields: {
+        type: 'object',
+        required: ['title'],
+        properties: {
+          title: {
+            type: 'string',
+            maxLength: 255,
+            title: 'Title',
+            description: 'Main label for the notification.',
+          },
+          description: {
+            type: 'string',
+            title: 'Body',
+            description: 'Longer context for the notification message.',
+          },
+          caption: {
+            type: 'string',
+            title: 'Caption',
+          },
+          kind: {
+            type: 'string',
+            title: 'Notification kind',
+            enum: ['success', 'info', 'warning', 'error'],
+          },
+        },
+      },
+    },
+  },
+  // highlight-end
+};
+```
+
+This will end up on the CMS as:
+
+![Settings schema rendered in CMS](../../static/img/tutorial/settings-schema-options.png)
+
 ---
 
 Properties:
@@ -51,4 +120,5 @@ Properties:
   - [`title`](https://js-widgets.github.io/js-widgets/registry-schema/#items_title)
   - [`description`](https://js-widgets.github.io/js-widgets/registry-schema/#items_description)
   - [`status`](https://js-widgets.github.io/js-widgets/registry-schema/#items_status)
+  - [`settingsSchema`](https://js-widgets.github.io/js-widgets/registry-schema/#items_settingsSchema)
   - `entry`: the path to [the render file](./render-file) for the component.

@@ -1,10 +1,13 @@
 ---
 sidebar_position: 4
-title: 3. Render File
+title: 1.3. Render File
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::note
+Take a look at the [i18n page](../i18n) for more information on translating widgets.
+:::
 Widgets are stand alone JS applications, but a component library only has components. To bridge that gap we need to
 create a render file. This is a file that will render a component in a `<div>` that the CMS will print on the page. The
 JavaScript application will render inside that `<div>`.
@@ -51,12 +54,14 @@ const render = (instanceId, langCode, origin, cb) => {
     return;
   }
   // Just print the custom HTML element inside of the div and call the callback.
+  // highlight-start
   element.innerHTML = `<bx-toast-notification
     title="${element.getAttribute('data-title')}"
     subtitle="${element.getAttribute('data-description')}"
     caption="${element.getAttribute('data-caption')}"
     kind="${element.getAttribute('data-kind')}"
   />`;
+  // highlight-end
   // Execute the callback so the parent process knows we are done rendering.
   cb(element);
 };
@@ -97,12 +102,14 @@ function render(instanceId, langCode, origin, cb) {
   ReactDOM.render(
     <React.StrictMode>
       <IntlProvider locale={translation.locale} messages={translation.messages}>
+        // highlight-start
         <ToastNotification
           title={element.getAttribute('data-title')}
           subtitle={element.getAttribute('data-description')}
           caption={element.getAttribute('data-caption')}
           kind={element.getAttribute('data-kind')}
         />
+        // highlight-end
       </IntlProvider>
     </React.StrictMode>,
     element,
@@ -134,3 +141,9 @@ find the Edit link below and edit this page.
 
 </TabItem>
 </Tabs>
+
+:::info
+Note that the editorial input from the CMS is made available to you as data attributes in the wrapping `<div>`. You can
+get those values with `element.getAttribute('data-<propertyname>')`. This is how you feed the editorial input to the
+JavaScript component props.
+:::
