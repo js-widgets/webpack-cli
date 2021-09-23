@@ -95,7 +95,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           ],
         },
         prism: {
-          theme: darkCodeTheme,
+          theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
           additionalLanguages: ['php', 'jsx'],
         },
