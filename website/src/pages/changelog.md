@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/js-widgets/webpack-cli/compare/v1.1.5...v1.2.0) (2021-11-18)
+
+
+### Features
+
+* allow some environment variables ([#1](https://github.com/js-widgets/webpack-cli/issues/1)) ([8c5cf44](https://github.com/js-widgets/webpack-cli/commit/8c5cf44d48ab4a6f9d0f8d79cfcfa713e9190c02))
+
 ## [1.1.5](https://github.com/js-widgets/webpack-cli/compare/v1.1.4...v1.1.5) (2021-09-23)
 
 
