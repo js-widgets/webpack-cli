@@ -2,6 +2,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { EnvironmentPlugin } = require('webpack');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 let mode = 'development';
@@ -10,6 +11,11 @@ const plugins = [
   new CleanWebpackPlugin(),
   new MiniCssExtractPlugin({
     filename: '[name]/css/main.css',
+  }),
+  new EnvironmentPlugin({
+    NODE_ENV: 'development',
+    DEBUG: false,
+    PUBLIC_URL: '',
   }),
 ];
 
