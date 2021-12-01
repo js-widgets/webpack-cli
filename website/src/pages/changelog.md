@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/js-widgets/webpack-cli/compare/v1.2.0...v1.3.0) (2021-12-01)
+
+
+### Features
+
+* add support for assets URL ([#2](https://github.com/js-widgets/webpack-cli/issues/2)) ([ea87803](https://github.com/js-widgets/webpack-cli/commit/ea87803f97e0d3d1be65ccdb37f75c3ed032beb9))
+
 # [1.2.0](https://github.com/js-widgets/webpack-cli/compare/v1.1.5...v1.2.0) (2021-11-18)
 
 
