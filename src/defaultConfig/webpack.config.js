@@ -16,6 +16,7 @@ const plugins = [
     NODE_ENV: 'development',
     DEBUG: false,
     PUBLIC_URL: '',
+    PUBLIC_ASSETS_URL: '',
   }),
 ];
 
