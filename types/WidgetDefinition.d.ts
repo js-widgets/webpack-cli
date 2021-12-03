@@ -1,5 +1,6 @@
 import { EntryObject } from 'webpack';
 import { Schema } from 'ajv';
+import { RegistryConfig } from 'RegistryConfig';
 
 export type WidgetMetadataBasic = {
   shortcode: string;
@@ -10,6 +11,7 @@ export type WidgetMetadataBasic = {
   };
   description?: string;
   additionalCustomProperties?: Record<string, scalar>;
+  externalPeerDependencies?: RegistryConfig['externalPeerDependencies'];
 };
 
 export type WidgetDefinition = WidgetMetadataBasic & { entry: EntryObject };

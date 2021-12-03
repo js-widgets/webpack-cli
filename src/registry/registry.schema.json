@@ -22,20 +22,14 @@
           "maxLength": 255,
           "title": "Machine Name ID",
           "description": "The widget type identifier across all systems. This ID should be unique per registry.",
-          "examples": [
-            "boilerplate",
-            "foo-bar"
-          ]
+          "examples": ["boilerplate", "foo-bar"]
         },
         "version": {
           "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$",
           "type": "string",
           "title": "Version",
           "description": "The semantic version string for the widget. This is mainly used for change detection.",
-          "examples": [
-            "v0.2.1",
-            "v3.0.1"
-          ]
+          "examples": ["v0.2.1", "v3.0.1"]
         },
         "files": {
           "type": "array",
@@ -55,27 +49,20 @@
           "type": "string",
           "title": "The human readable name for the widget.",
           "description": "This is used in editorial tools to provide a friendlier alternative to \"shortcode\". This property should be unique per registry to avoid confusion, but it is not mandatory.",
-          "examples": [
-            "Boilerplate",
-            "Foo is the Bar"
-          ],
+          "examples": ["Boilerplate", "Foo is the Bar"],
           "maxLength": 255
         },
         "createdAt": {
           "type": "string",
           "format": "date-time",
           "description": "The original date when this was created.",
-          "examples": [
-            "2021-04-28T14:15:03.750Z"
-          ]
+          "examples": ["2021-04-28T14:15:03.750Z"]
         },
         "updatedAt": {
           "type": "string",
           "format": "date-time",
           "description": "The last time this entry was modified.",
-          "examples": [
-            "2021-04-28T14:15:03.750Z"
-          ]
+          "examples": ["2021-04-28T14:15:03.750Z"]
         },
         "settingsSchema": {
           "$ref": "http://json-schema.org/draft-07/schema#",
@@ -89,12 +76,7 @@
           "title": "Status",
           "maxLength": 255,
           "description": "Denotes the status of the widget and its readiness for production.",
-          "enum": [
-            "stable",
-            "beta",
-            "wip",
-            "deprecated"
-          ]
+          "enum": ["stable", "beta", "wip", "deprecated"]
         },
         "help": {
           "type": "string",
@@ -129,12 +111,7 @@
           }
         }
       },
-      "required": [
-        "files",
-        "shortcode",
-        "version",
-        "title"
-      ],
+      "required": ["files", "shortcode", "version", "title"],
       "title": "WidgetRegistryElement"
     }
   },

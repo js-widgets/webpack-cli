@@ -17,6 +17,16 @@ export default async function buildWebpackConfiguration(
     if (configData.webpackFinal) {
       configuration = await configData.webpackFinal(configuration);
     }
+    const { externalPeerDependencies = {} } = configData;
+    if (Object.keys(externalPeerDependencies).length) {
+      configuration.externals = Object.keys(externalPeerDependencies).reduce(
+        (ext, key) => ({
+          ...ext,
+          [key]: externalPeerDependencies[key].varName,
+        }),
+        {},
+      );
+    }
   } catch (error: any) {
     logger && logger(error);
   }

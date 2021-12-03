@@ -5,6 +5,7 @@ import validateRegistry from './validateRegistry';
 import { WidgetRegistry, WidgetRegistryItem } from 'WidgetRegistry';
 import { WidgetDefinition } from 'WidgetDefinition';
 import currentTime from '../util/currentTime';
+import { RegistryConfig } from 'RegistryConfig';
 
 export default function buildNewRegistry(
   omitMissing: boolean,
@@ -13,6 +14,7 @@ export default function buildNewRegistry(
   templateUrl: string,
   pathToCompiledWidgets: string,
   version: string,
+  externalPeerDependencies: RegistryConfig['externalPeerDependencies'],
 ): WidgetRegistry {
   const compiledFiles = exploreCompiledWidgets(
     existingRegistry,
@@ -50,6 +52,7 @@ export default function buildNewRegistry(
           .replace(/{majorVersion}/, `v${semverMajor(version)}`),
         shortcode,
         version,
+        externalPeerDependencies,
       };
       return newItem;
     },

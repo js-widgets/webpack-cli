@@ -6,4 +6,11 @@ export type RegistryConfig = {
   register: string[];
   directoryUrl: string;
   webpackFinal?: HOFP<WebpackOptionsNormalized | Configuration>;
+  externalPeerDependencies?: Record<
+    string,
+    {
+      src: string;
+      varName: string;
+    }
+  >;
 };

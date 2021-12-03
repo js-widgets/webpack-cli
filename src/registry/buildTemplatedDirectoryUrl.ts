@@ -1,11 +1,10 @@
 import { dirname as pathDirname } from 'path';
-import loadWidgetRegistryConfig from '../webpack/widgetDefinition/loadWidgetRegistryConfig';
+import { RegistryConfig } from 'RegistryConfig';
 
 export default async function buildTemplatedDirectoryUrl(
-  registryConfigFile: string,
+  registryConfig: RegistryConfig,
   existingRegistryFile: string,
 ) {
-  const registryConfig = await loadWidgetRegistryConfig(registryConfigFile);
   const directoryUrl = registryConfig.directoryUrl.replace(/\/$/, '') || '';
   try {
     const remoteUrl = new URL(directoryUrl);
