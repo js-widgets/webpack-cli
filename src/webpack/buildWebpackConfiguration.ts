@@ -21,7 +21,16 @@ export default async function buildWebpackConfiguration(
   }
   const entry: Record<string, any> = {};
   for (const definition of definitions) {
-    entry[definition.shortcode] = definition.entry;
+    const libName = `render-${definition.shortcode}`.replace(/-./g, (match) =>
+      match[1].toUpperCase(),
+    );
+    entry[definition.shortcode] = {
+      import: definition.entry,
+      library: {
+        name: libName,
+        type: 'window',
+      },
+    };
   }
   configuration.entry = entry;
   if (typeof configuration.output === 'undefined') {

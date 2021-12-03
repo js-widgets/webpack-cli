@@ -15,10 +15,6 @@ JavaScript application will render inside that `<div>`.
 Rendering a component is heavily dependent on the JS framework you are using. This step will look different for React,
 Vue, Angular, Web Components, ...
 
-:::caution Check the render function name!
-All the render files contain `window.renderXXXX`, where `XXXX` needs to be the same as the [`shortcode` property](./widget-definition) in [camel case](https://en.wikipedia.org/wiki/Camel_case).
-:::
-
 <Tabs
   defaultValue="react"
   values={[
@@ -31,7 +27,7 @@ All the render files contain `window.renderXXXX`, where `XXXX` needs to be the s
 
 <TabItem value="wc">
 
-```js title="src/components/notification/render-toast-notification.js"
+```js title="src/components/notification/index.js"
 require('./toast-notification');
 
 /**
@@ -47,8 +43,11 @@ require('./toast-notification');
  *   Protocol and hostname where a JSONAPI endpoint is available.
  * @param {Function} cb
  *   A callback that executes after the widget has been rendered.
+ *
+ * @return {Promise<void>}
+ *   The async render function.
  */
-const render = (instanceId, langCode, origin, cb) => {
+module.exports = async function(instanceId, langCode, origin, cb) => {
   const element = document.getElementById(instanceId);
   if (!element) {
     return;
@@ -65,14 +64,12 @@ const render = (instanceId, langCode, origin, cb) => {
   // Execute the callback so the parent process knows we are done rendering.
   cb(element);
 };
-
-window.renderToastNotification = render;
 ```
 
 </TabItem>
 <TabItem value="react">
 
-```js title="src/components/notification/render-toast-notification.js"
+```js title="src/components/notification/index.js"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
@@ -94,8 +91,11 @@ import i18n from './core/bin/i18n.js';
  *   Protocol and hostname where a JSONAPI endpoint is available.
  * @param {Function} cb
  *   A callback that executes after the widget has been rendered.
+ *
+ * @return {Promise<void>}
+ *   The async render function.
  */
-function render(instanceId, langCode, origin, cb) {
+module.exports = async function(instanceId, langCode, origin, cb) => {
   const element = document.getElementById(instanceId);
   const translation = new i18n(langCode || serviceWorker.getUrlLocale());
 
@@ -117,8 +117,6 @@ function render(instanceId, langCode, origin, cb) {
   );
   serviceWorker.unregister();
 }
-
-window.renderToastNotification = render;
 ```
 
 </TabItem>

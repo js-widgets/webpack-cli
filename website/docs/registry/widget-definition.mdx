@@ -27,7 +27,6 @@ src/components/notification/toast-notification.widget.js
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, 'render-toast-notification.js'),
   shortcode: 'toast-notification',
   title: 'Toast Notification',
   description: 'A notification element with a bit more context than the inline notification.',
@@ -66,7 +65,8 @@ Let's add three text boxes and one radio button to collect the _Toast Notificati
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, 'render-toast-notification.js'),
+  // entry defaults to 'index.js' but you can change it to any other location.
+  // entry: path.join(__dirname, 'render-toast-notification.js'),
   shortcode: 'toast-notification',
   title: 'Toast Notification',
   description: 'A notification element with a bit more context than the inline notification.',
