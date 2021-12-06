@@ -6,13 +6,14 @@ import { RegistryConfig } from 'RegistryConfig';
 export default async function buildWebpackConfiguration(
   definitions: WidgetDefinition[],
   configuration: Configuration,
-  RegistryConfig: string,
+  registryConfig: string,
   outputDir: string,
   logger?: (input: string) => void,
 ): Promise<Configuration> {
   let configData: RegistryConfig;
   try {
-    configData = await import(RegistryConfig);
+    const importData = await import(registryConfig);
+    configData = importData?.default || importData;
     if (configData.webpackFinal) {
       configuration = await configData.webpackFinal(configuration);
     }

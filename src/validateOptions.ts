@@ -1,9 +1,12 @@
-import fs from 'fs/promises';
+import fs from 'fs';
+import { promisify } from 'util';
 import path from 'path';
 import { URL } from 'url';
 import coerceSemver from 'semver/functions/coerce';
 import validateSemver from 'semver/functions/valid';
 import { CLIOptions } from 'CLIOptions';
+
+const stat = promisify(fs.stat);
 
 export default async function validateOptions(
   rawOptions: Record<string, any>,
@@ -18,7 +21,7 @@ export default async function validateOptions(
   } = rawOptions;
   let isDir = false;
   try {
-    isDir = (await fs.stat(outputDir)).isDirectory();
+    isDir = (await stat(outputDir)).isDirectory();
   } catch (e: any) {
     throw new Error(`Unable to find the output dir: "${outputDir}"`);
   }
@@ -44,7 +47,7 @@ export default async function validateOptions(
   }
 
   try {
-    isDir = (await fs.stat(sourceDir)).isDirectory();
+    isDir = (await stat(sourceDir)).isDirectory();
   } catch (e: any) {
     throw new Error(`Unable to find the source dir: "${sourceDir}"`);
   }
@@ -56,7 +59,7 @@ export default async function validateOptions(
   let isFile = false;
   const configFile = path.join(sourceDir, '.widgetRegistry', 'main.js');
   try {
-    isFile = (await fs.stat(configFile)).isFile();
+    isFile = (await stat(configFile)).isFile();
   } catch (e: any) {}
   if (!isFile) {
     throw new Error(

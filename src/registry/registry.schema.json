@@ -82,7 +82,7 @@
           "type": "object",
           "nullable": true,
           "title": "Editorial Display Options",
-          "description": "Used by widget developers to create reusable widget types. Allows JS widget developers to specify input data that the widget needs.\n\nSome examples for this could include:\n\n - _Content for a CTA button_.\n - _A radio button to select dark mode_, \n - _a checklist to only display certain products on the widget_.\n - _A text field to specify an API endpoint_.\n - etc.\n\nThis uses the JSON Schema format for each one of the fields, then each CMS integration will transform that into a form that editors will use for data input. Data provided by editors will then be serialized and rendered as `\"data-[name-of-field]\"` attributes in the wrapper `div` for the widget.",
+          "description": "Used by widget developers to create reusable widget types. Allows JS widget developers to specify input data that the widget needs.\n\nSome examples for this could include:\n\n - _Content for a CTA button_.\n - _A radio button to select dark mode_, \n - _a checklist to only display certain products on the widget_.\n - _A text field to specify an API endpoint_.\n - etc.\n\nThis uses the JSON Schema format for each one of the fields, then each CMS integration will transform that into a form that editors will use for data input. Data provided by editors will then be serialized and rendered as `\"data-[name-of-field]\"` attributes in the wrapper `div` for the widget."
         },
         "status": {
           "type": "string",
