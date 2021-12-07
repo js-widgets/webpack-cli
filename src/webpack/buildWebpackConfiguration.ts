@@ -6,13 +6,14 @@ import { RegistryConfig } from 'RegistryConfig';
 export default async function buildWebpackConfiguration(
   definitions: WidgetDefinition[],
   configuration: Configuration,
-  RegistryConfig: string,
+  registryConfig: string,
   outputDir: string,
   logger?: (input: string) => void,
 ): Promise<Configuration> {
   let configData: RegistryConfig;
   try {
-    configData = await import(RegistryConfig);
+    const importData = await import(registryConfig);
+    configData = importData?.default || importData;
     if (configData.webpackFinal) {
       configuration = await configData.webpackFinal(configuration);
     }
@@ -21,7 +22,16 @@ export default async function buildWebpackConfiguration(
   }
   const entry: Record<string, any> = {};
   for (const definition of definitions) {
-    entry[definition.shortcode] = definition.entry;
+    const libName = `render-${definition.shortcode}`.replace(/-./g, (match) =>
+      match[1].toUpperCase(),
+    );
+    entry[definition.shortcode] = {
+      import: definition.entry,
+      library: {
+        name: libName,
+        type: 'window',
+      },
+    };
   }
   configuration.entry = entry;
   if (typeof configuration.output === 'undefined') {
@@ -30,7 +40,7 @@ export default async function buildWebpackConfiguration(
   configuration.output.path = path.join(outputDir, 'widgets');
   configuration.output.filename =
     configuration.mode === 'production'
-      ? '[name]/js/main-[hash:6].js'
+      ? '[name]/js/main-[fullhash:6].js'
       : '[name]/js/main.js';
   configuration.output.assetModuleFilename = '[name]/images/[hash][ext][query]';
   if (logger) {

@@ -27,7 +27,6 @@ src/components/notification/toast-notification.widget.js
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, 'render-toast-notification.js'),
   shortcode: 'toast-notification',
   title: 'Toast Notification',
   description: 'A notification element with a bit more context than the inline notification.',
@@ -63,10 +62,9 @@ The syntax to describe the configurable options is the [JSON Schema standard](ht
 Let's add three text boxes and one radio button to collect the _Toast Notification_ options.
 
 ```js title="src/components/notification/toast-notification.widget.js"
-const path = require('path');
-
 module.exports = {
-  entry: path.join(__dirname, 'render-toast-notification.js'),
+  // entry defaults to 'index.js' but you can change it to any other location.
+  // entry: path.join(__dirname, 'render-toast-notification.js'),
   shortcode: 'toast-notification',
   title: 'Toast Notification',
   description: 'A notification element with a bit more context than the inline notification.',

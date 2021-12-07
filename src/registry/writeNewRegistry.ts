@@ -1,9 +1,12 @@
-import fs from 'fs/promises';
+import fs from 'fs';
+import { promisify } from 'util';
 import buildNewRegistry from './buildNewRegistry';
 import loadExistingRegistry from './loadExistingRegistry';
 import { WidgetDefinition } from 'WidgetDefinition';
 import guessNewVersion from './guessNewVersion';
 import buildTemplatedDirectoryUrl from './buildTemplatedDirectoryUrl';
+
+const writeFile = promisify(fs.writeFile);
 
 export default async function writeNewRegistry(
   omitMissing: boolean,
@@ -30,6 +33,6 @@ export default async function writeNewRegistry(
     pathToCompiledWidgets,
     version,
   );
-  await fs.writeFile(pathToNewRegistry, JSON.stringify(newRegistry));
+  await writeFile(pathToNewRegistry, JSON.stringify(newRegistry));
   return version;
 }

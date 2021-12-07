@@ -9,6 +9,7 @@ export default async function loadExistingRegistry(
   if (!fileUrl) {
     return [];
   }
-  const existingRegistry = JSON.parse(await downloadFileContents(fileUrl));
+  const fileContents = await downloadFileContents(fileUrl);
+  const existingRegistry = JSON.parse(fileContents);
   return validateRegistry(existingRegistry);
 }
