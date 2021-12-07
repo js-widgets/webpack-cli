@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/js-widgets/webpack-cli/compare/v1.3.0...v2.0.0) (2021-12-07)
+
+
+### Features
+
+* webpack improvements ([#4](https://github.com/js-widgets/webpack-cli/issues/4)) ([5253c45](https://github.com/js-widgets/webpack-cli/commit/5253c45435511ffc96e06a7a52ec3c445db4980c))
+
+
+### BREAKING CHANGES
+
+* It also leverages webpack to create the `window.renderMyWidget = ...`. One only needs to export a function from now on. This is a breaking change, since render files need an export now.
+
 # [1.3.0](https://github.com/js-widgets/webpack-cli/compare/v1.2.0...v1.3.0) (2021-12-01)
 
 
