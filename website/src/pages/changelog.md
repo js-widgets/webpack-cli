@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/js-widgets/webpack-cli/compare/v2.0.1...v2.0.2) (2021-12-08)
+
+
+### Bug Fixes
+
+* use development source map for single files ([a91218a](https://github.com/js-widgets/webpack-cli/commit/a91218af5ce52893f752be591cfa30abf15a8b9c))
+* use development source map for single files (II) ([b33654a](https://github.com/js-widgets/webpack-cli/commit/b33654ac77ee0e03025b232da89a3eeb226e605c))
+
 ## [2.0.1](https://github.com/js-widgets/webpack-cli/compare/v2.0.0...v2.0.1) (2021-12-08)
 
 
