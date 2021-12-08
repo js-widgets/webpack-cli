@@ -76,7 +76,7 @@ module.exports = {
   plugins,
   target,
 
-  devtool: 'source-map',
+  devtool: config.mode === 'production' ? 'source-map' : 'inline-source-map',
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
