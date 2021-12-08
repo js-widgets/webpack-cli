@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/js-widgets/webpack-cli/compare/v2.0.0...v2.0.1) (2021-12-08)
+
+
+### Bug Fixes
+
+* use full hash without dash ([aade5e3](https://github.com/js-widgets/webpack-cli/commit/aade5e38d98c2105bd5df77952af1d72a19996aa))
+
 # [2.0.0](https://github.com/js-widgets/webpack-cli/compare/v1.3.0...v2.0.0) (2021-12-07)
 
 
