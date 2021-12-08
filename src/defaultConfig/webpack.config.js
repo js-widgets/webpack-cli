@@ -6,6 +6,7 @@ const { EnvironmentPlugin } = require('webpack');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 let mode = 'development';
+let devtool = 'inline-source-map';
 let target = 'web';
 const plugins = [
   new CleanWebpackPlugin(),
@@ -22,6 +23,7 @@ const plugins = [
 
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
+  devtool = 'source-map';
 }
 
 module.exports = {
@@ -75,8 +77,7 @@ module.exports = {
 
   plugins,
   target,
-
-  devtool: config.mode === 'production' ? 'source-map' : 'inline-source-map',
+  devtool,
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
