@@ -40,7 +40,7 @@ export default async function buildWebpackConfiguration(
   configuration.output.path = path.join(outputDir, 'widgets');
   configuration.output.filename =
     configuration.mode === 'production'
-      ? '[name]/js/main-[fullhash:6].js'
+      ? '[name]/js/main.[fullhash].js'
       : '[name]/js/main.js';
   configuration.output.assetModuleFilename = '[name]/images/[hash][ext][query]';
   if (logger) {
