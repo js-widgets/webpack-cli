@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/js-widgets/webpack-cli/compare/v2.0.2...v2.0.3) (2021-12-09)
+
+
+### Bug Fixes
+
+* ensure we export the default for the library ([a809b3d](https://github.com/js-widgets/webpack-cli/commit/a809b3d419d5a1554e5591f81587b8ef385a8dc6))
+
 ## [2.0.2](https://github.com/js-widgets/webpack-cli/compare/v2.0.1...v2.0.2) (2021-12-08)
 
 
