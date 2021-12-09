@@ -30,6 +30,7 @@ export default async function buildWebpackConfiguration(
       library: {
         name: libName,
         type: 'window',
+        export: 'default',
       },
     };
   }
