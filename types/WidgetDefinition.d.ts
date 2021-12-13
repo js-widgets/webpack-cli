@@ -1,5 +1,4 @@
 import { Schema } from 'ajv';
-import { RegistryConfig } from 'RegistryConfig';
 
 export type WidgetMetadataBasic = {
   shortcode: string;
@@ -10,7 +9,9 @@ export type WidgetMetadataBasic = {
   };
   description?: string;
   additionalCustomProperties?: Record<string, scalar>;
-  externalPeerDependencies?: RegistryConfig['externalPeerDependencies'];
 };
 
-export type WidgetDefinition = WidgetMetadataBasic & { entry: string };
+export type WidgetDefinition = WidgetMetadataBasic & {
+  entry: string;
+  useExternalPeerDependencies: string[];
+};

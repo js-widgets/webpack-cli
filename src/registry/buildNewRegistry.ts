@@ -1,6 +1,7 @@
 import semverMajor from 'semver/functions/major';
 import exploreCompiledWidgets from './exploreCompiledWidgets';
 import validateRegistry from './validateRegistry';
+import isString from '../util/isString';
 
 import { WidgetRegistry, WidgetRegistryItem } from 'WidgetRegistry';
 import { WidgetDefinition } from 'WidgetDefinition';
@@ -14,7 +15,7 @@ export default function buildNewRegistry(
   templateUrl: string,
   pathToCompiledWidgets: string,
   version: string,
-  externalPeerDependencies: RegistryConfig['externalPeerDependencies'],
+  allExternalPeerDependencies: RegistryConfig['externalPeerDependencies'] = {},
 ): WidgetRegistry {
   const compiledFiles = exploreCompiledWidgets(
     existingRegistry,
@@ -29,7 +30,8 @@ export default function buildNewRegistry(
       settingsSchema,
       description,
       additionalCustomProperties,
-    }) => {
+      useExternalPeerDependencies = [],
+    }): WidgetRegistryItem => {
       const existingEntry: WidgetRegistryItem | undefined =
         existingRegistry.find((item) => item.shortcode === shortcode);
       // If there is an existing entry, that means this is an update, and not an
@@ -38,6 +40,19 @@ export default function buildNewRegistry(
         typeof existingEntry === 'undefined'
           ? currentTime()
           : existingEntry.createdAt;
+      // Only set the external peer dependencies explicitly selected.
+      const externalPeerDependencies = useExternalPeerDependencies.reduce(
+        (deps: WidgetRegistryItem['externalPeerDependencies'], key: string) => {
+          if (!isString(allExternalPeerDependencies[key]?.src)) {
+            return deps;
+          }
+          return {
+            ...deps,
+            [key]: { src: allExternalPeerDependencies[key].src },
+          };
+        },
+        {},
+      );
       const newItem: WidgetRegistryItem = {
         files: compiledFiles.get(shortcode) || [],
         createdAt,

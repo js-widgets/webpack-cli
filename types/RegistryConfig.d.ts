@@ -10,7 +10,7 @@ export type RegistryConfig = {
     string,
     {
       src: string;
-      varName: string;
+      external: keyof Configuration['externals'];
     }
   >;
 };

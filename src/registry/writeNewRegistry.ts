@@ -28,10 +28,7 @@ export default async function writeNewRegistry(
     omitMissing,
     existingRegistry,
     widgetDefinitions,
-    await buildTemplatedDirectoryUrl(
-      registryConfig,
-      existingRegistryUrl?.href || '',
-    ),
+    buildTemplatedDirectoryUrl(registryConfig, existingRegistryUrl?.href || ''),
     pathToCompiledWidgets,
     version,
     registryConfig?.externalPeerDependencies || {},

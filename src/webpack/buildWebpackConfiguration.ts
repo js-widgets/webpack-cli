@@ -23,10 +23,12 @@ export default async function buildWebpackConfiguration(
       configuration.externals = Object.keys(externalPeerDependencies).reduce(
         (ext, key) => ({
           ...ext,
-          [key]: externalPeerDependencies[key].varName,
+          [key]: externalPeerDependencies[key].external,
         }),
         {},
       );
+      configuration.externalsPresets = { webAsync: true };
+      configuration.externalsType = 'window';
     }
   } catch (error: unknown) {
     logger && logger(error);
