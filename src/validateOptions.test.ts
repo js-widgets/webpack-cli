@@ -27,13 +27,16 @@ describe('validateOptions', () => {
       existingRegistry: 'https://example.org/tsconfig.json',
       sourceDir: './src/__testData__/validProject',
     };
+    expect.assertions(2);
     try {
       await validateOptions(rawOptions);
-      expect(false).toBe(true);
     } catch (error: unknown) {
-      expect(error.message).toBe(
-        'Unable to find the output dir: "./invalid-path"',
-      );
+      expect(error).toBeInstanceOf(Error);
+      if (error instanceof Error) {
+        expect(error.message).toBe(
+          'Unable to find the output dir: "./invalid-path"',
+        );
+      }
     }
   });
 
@@ -44,13 +47,16 @@ describe('validateOptions', () => {
       existingRegistry: './invalid-path',
       sourceDir: './src/__testData__/validProject',
     };
+    expect.assertions(2);
     try {
       await validateOptions(rawOptions);
-      expect(false).toBe(true);
     } catch (error: unknown) {
-      expect(error.message).toBe(
-        'Invalid URL for the existing registry: "./invalid-path"',
-      );
+      expect(error).toBeInstanceOf(Error);
+      if (error instanceof Error) {
+        expect(error.message).toBe(
+          'Invalid URL for the existing registry: "./invalid-path"',
+        );
+      }
     }
   });
 
@@ -61,13 +67,16 @@ describe('validateOptions', () => {
       existingRegistry: 'https://example.org/tsconfig.json',
       sourceDir: './invalid-directory',
     };
+    expect.assertions(2);
     try {
       await validateOptions(rawOptions);
-      expect(false).toBe(true);
     } catch (error: unknown) {
-      expect(error.message).toBe(
-        'Unable to find the source dir: "./invalid-directory"',
-      );
+      expect(error).toBeInstanceOf(Error);
+      if (error instanceof Error) {
+        expect(error.message).toBe(
+          'Unable to find the source dir: "./invalid-directory"',
+        );
+      }
     }
   });
 
@@ -78,11 +87,16 @@ describe('validateOptions', () => {
       existingRegistry: 'https://example.org/tsconfig.json',
       sourceDir: './tsconfig.json',
     };
+    expect.assertions(2);
     try {
       await validateOptions(rawOptions);
-      expect(false).toBe(true);
     } catch (error: unknown) {
-      expect(error.message).toMatch(/^The provided path is not a directory: /);
+      expect(error).toBeInstanceOf(Error);
+      if (error instanceof Error) {
+        expect(error.message).toMatch(
+          /^The provided path is not a directory: /,
+        );
+      }
     }
   });
 
@@ -93,11 +107,14 @@ describe('validateOptions', () => {
       existingRegistry: 'https://example.org/tsconfig.json',
       sourceDir: './src/__testData__/invalidProject',
     };
+    expect.assertions(2);
     try {
       await validateOptions(rawOptions);
-      expect(false).toBe(true);
     } catch (error: unknown) {
-      expect(error.message).toMatch(/^Unable to find the /);
+      expect(error).toBeInstanceOf(Error);
+      if (error instanceof Error) {
+        expect(error.message).toMatch(/^Unable to find the /);
+      }
     }
   });
 });

@@ -58,11 +58,9 @@ export default async (
     logger(`Config file: ${opts.configFile}`);
     logger(`New version: ${opts.newVersion}`);
   } catch (error: unknown) {
-    logger(
-      `[FATAL ERROR] ${
-        JSON.parse(JSON.stringify(error)) || ''
-      }\n\n${program.helpInformation()}`,
-    );
+    if (error instanceof Error) {
+      logger(`[FATAL ERROR] ${error || ''}\n\n${program.helpInformation()}`);
+    }
     throw error;
   }
   // For now we don't allow bringing in your own webpack configuration file. In
@@ -83,7 +81,9 @@ export default async (
       try {
         return loadWidgetDefinitionFile(filename);
       } catch (error: unknown) {
-        logger(`[WARNING] ${JSON.parse(JSON.stringify(error)).message || ''}`);
+        if (error instanceof Error) {
+          logger(`[WARNING] ${error.message || ''}`);
+        }
       }
     })
     .filter((i) => i);
@@ -113,9 +113,9 @@ export default async (
       });
     });
   } catch (error: unknown) {
-    compiler
-      .getInfrastructureLogger('CLI')
-      .error(JSON.parse(JSON.stringify(error)).message);
+    if (error instanceof Error) {
+      compiler.getInfrastructureLogger('CLI').error(error.message);
+    }
     process.exit(1);
     process.chdir(cwd);
   }
