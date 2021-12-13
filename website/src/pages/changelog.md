@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/js-widgets/webpack-cli/compare/v2.0.3...v2.1.0) (2021-12-13)
+
+
+### Features
+
+* support for external dependencies ([#3](https://github.com/js-widgets/webpack-cli/issues/3)) ([51bbc09](https://github.com/js-widgets/webpack-cli/commit/51bbc09f49d2ecbe9e6b88ea3418542c0064c914))
+
 ## [2.0.3](https://github.com/js-widgets/webpack-cli/compare/v2.0.2...v2.0.3) (2021-12-09)
 
 
