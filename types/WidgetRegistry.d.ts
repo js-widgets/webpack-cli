@@ -6,6 +6,7 @@ type WidgetRegistryItem = WidgetMetadataBasic & {
   files: string[];
   createdAt: string;
   updatedAt: string;
+  externalPeerDependencies?: Record<string, { src: string }>;
 };
 
 export type WidgetRegistry = WidgetRegistryItem[];

@@ -11,7 +11,7 @@ export default async function loadWidgetRegistryConfig(
   const defaultData: RegistryConfig = { directoryUrl: '', register: [] };
   try {
     configData = { ...defaultData, ...(await import(filename)) };
-  } catch (error: any) {
+  } catch (error: unknown) {
     return defaultData;
   }
   return configData;

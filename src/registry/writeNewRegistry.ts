@@ -5,6 +5,7 @@ import loadExistingRegistry from './loadExistingRegistry';
 import { WidgetDefinition } from 'WidgetDefinition';
 import guessNewVersion from './guessNewVersion';
 import buildTemplatedDirectoryUrl from './buildTemplatedDirectoryUrl';
+import loadWidgetRegistryConfig from '../webpack/widgetDefinition/loadWidgetRegistryConfig';
 
 const writeFile = promisify(fs.writeFile);
 
@@ -22,16 +23,15 @@ export default async function writeNewRegistry(
   if (!version) {
     throw new Error(`Unable to guess the new version for the registry.`);
   }
+  const registryConfig = await loadWidgetRegistryConfig(registryConfigFile);
   const newRegistry = buildNewRegistry(
     omitMissing,
     existingRegistry,
     widgetDefinitions,
-    await buildTemplatedDirectoryUrl(
-      registryConfigFile,
-      existingRegistryUrl?.href || '',
-    ),
+    buildTemplatedDirectoryUrl(registryConfig, existingRegistryUrl?.href || ''),
     pathToCompiledWidgets,
     version,
+    registryConfig?.externalPeerDependencies || {},
   );
   await writeFile(pathToNewRegistry, JSON.stringify(newRegistry));
   return version;

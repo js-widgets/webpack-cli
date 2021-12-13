@@ -1,7 +1,6 @@
 import glob from 'glob';
 import { dirname, join, resolve as resolvePath } from 'path';
 
-import { RegistryConfig } from 'RegistryConfig';
 import loadWidgetRegistryConfig from './loadWidgetRegistryConfig';
 
 /**

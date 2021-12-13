@@ -15,7 +15,7 @@ const listFilesSync = (
   folder: string,
   _subpath = '',
   _files: string[] = [],
-) => {
+): string[] => {
   fs.readdirSync(path.join(folder, _subpath)).forEach((file) => {
     if (fs.lstatSync(path.join(folder, _subpath, file)).isDirectory()) {
       listFilesSync(folder, path.join(_subpath, file), _files);

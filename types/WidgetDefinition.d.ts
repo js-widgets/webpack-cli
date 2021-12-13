@@ -1,4 +1,3 @@
-import { EntryObject } from 'webpack';
 import { Schema } from 'ajv';
 
 export type WidgetMetadataBasic = {
@@ -12,4 +11,7 @@ export type WidgetMetadataBasic = {
   additionalCustomProperties?: Record<string, scalar>;
 };
 
-export type WidgetDefinition = WidgetMetadataBasic & { entry: EntryObject };
+export type WidgetDefinition = WidgetMetadataBasic & {
+  entry: string;
+  useExternalPeerDependencies: string[];
+};

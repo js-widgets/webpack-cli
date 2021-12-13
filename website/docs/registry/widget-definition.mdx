@@ -2,7 +2,8 @@
 sidebar_position: 3
 title: 1.2. Widget Definition
 ---
-import Link from '@docusaurus/Link';
+
+import Link from "@docusaurus/Link";
 
 Once you have [configured the registry](./config/declare-registry) it's time to create a widget definitions for one of
 your components.
@@ -24,8 +25,6 @@ src/components/notification/toast-notification.widget.js
 ```
 
 ```js title="src/components/notification/toast-notification.widget.js"
-const path = require('path');
-
 module.exports = {
   shortcode: 'toast-notification',
   title: 'Toast Notification',
@@ -69,6 +68,7 @@ module.exports = {
   title: 'Toast Notification',
   description: 'A notification element with a bit more context than the inline notification.',
   status: 'wip',
+  usesExternalPeerDependencies: ['react', 'react-dom'],
   // highlight-start
   settingsSchema: {
     type: 'object',
@@ -119,4 +119,5 @@ Properties:
   - [`description`](https://js-widgets.github.io/js-widgets/registry-schema/#items_description)
   - [`status`](https://js-widgets.github.io/js-widgets/registry-schema/#items_status)
   - [`settingsSchema`](https://js-widgets.github.io/js-widgets/registry-schema/#items_settingsSchema)
-  - `entry`: the path to [the render file](./render-file) for the component.
+  - `usesExternalPeerDependencies` (`string[]`): The list of keys of [external peer dependencies](./config/options/allExternalPeerDependencies) this widget uses.
+  - `entry` (`string`): the path to [the render file](./render-file) for the component. Default: `./index.js`.
