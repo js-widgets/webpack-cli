@@ -9,7 +9,17 @@
  */
 import isString from '../../util/isString';
 
-export default function validateWidgetDefinitionFile(importData: any): void {
+type WidgetDefinitionImportData = Partial<{
+  entry: unknown;
+  shortcode: unknown;
+  title: unknown;
+  status: unknown;
+  settingsSchema: unknown;
+}>;
+
+export default function validateWidgetDefinitionFile(
+  importData: WidgetDefinitionImportData,
+): void {
   const { entry, shortcode, title, status, settingsSchema } = importData;
   if (!entry || !shortcode) {
     throw new Error(
@@ -29,7 +39,7 @@ export default function validateWidgetDefinitionFile(importData: any): void {
     throw new Error('Unexpected type: "status" should be a string.');
   }
   const validStatuses = ['stable', 'beta', 'wip', 'deprecated'];
-  if (validStatuses.indexOf(status) === -1) {
+  if (validStatuses.indexOf(`${status}`) === -1) {
     throw new Error(
       `Unexpected status value: allowed values are ${validStatuses.join(', ')}`,
     );

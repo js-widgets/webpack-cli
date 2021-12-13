@@ -1,10 +1,10 @@
 import { dirname as pathDirname } from 'path';
 import { RegistryConfig } from 'RegistryConfig';
 
-export default async function buildTemplatedDirectoryUrl(
+export default function buildTemplatedDirectoryUrl(
   registryConfig: RegistryConfig,
   existingRegistryFile: string,
-) {
+): string {
   const directoryUrl = registryConfig.directoryUrl.replace(/\/$/, '') || '';
   try {
     const remoteUrl = new URL(directoryUrl);

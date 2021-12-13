@@ -41,7 +41,7 @@ describe('command', () => {
         ],
         logger,
       );
-    } catch (error: any) {
+    } catch (error: unknown) {
       expect(logger).toHaveBeenCalledTimes(1);
     }
   });

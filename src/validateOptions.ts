@@ -9,7 +9,7 @@ import { CLIOptions } from 'CLIOptions';
 const stat = promisify(fs.stat);
 
 export default async function validateOptions(
-  rawOptions: Record<string, any>,
+  rawOptions: Record<string, unknown>,
 ): Promise<CLIOptions> {
   const {
     debug,
@@ -20,21 +20,25 @@ export default async function validateOptions(
     newVersion,
   } = rawOptions;
   let isDir = false;
+  // Some string casting to deal easily with types.
+  const outDir = `${outputDir}`;
+  const srcDir = `${sourceDir}`;
+  const newVer = `${newVersion}`;
   try {
-    isDir = (await stat(outputDir)).isDirectory();
-  } catch (e: any) {
-    throw new Error(`Unable to find the output dir: "${outputDir}"`);
+    isDir = (await stat(outDir)).isDirectory();
+  } catch (error: unknown) {
+    throw new Error(`Unable to find the output dir: "${outDir}"`);
   }
   if (!isDir) {
     throw new Error(
-      `The provided path is not a directory: "${path.resolve(outputDir)}"`,
+      `The provided path is not a directory: "${path.resolve(outDir)}"`,
     );
   }
   let theUrl;
   if (existingRegistry) {
     try {
-      theUrl = new URL(existingRegistry);
-    } catch (e: any) {
+      theUrl = new URL(`${existingRegistry}`);
+    } catch (error: unknown) {
       throw new Error(
         `Invalid URL for the existing registry: "${existingRegistry}"`,
       );
@@ -47,20 +51,20 @@ export default async function validateOptions(
   }
 
   try {
-    isDir = (await stat(sourceDir)).isDirectory();
-  } catch (e: any) {
-    throw new Error(`Unable to find the source dir: "${sourceDir}"`);
+    isDir = (await stat(srcDir)).isDirectory();
+  } catch (error: unknown) {
+    throw new Error(`Unable to find the source dir: "${srcDir}"`);
   }
   if (!isDir) {
     throw new Error(
-      `The provided path is not a directory: "${path.resolve(sourceDir)}"`,
+      `The provided path is not a directory: "${path.resolve(srcDir)}"`,
     );
   }
   let isFile = false;
-  const configFile = path.join(sourceDir, '.widgetRegistry', 'main.js');
+  const configFile = path.join(srcDir, '.widgetRegistry', 'main.js');
   try {
     isFile = (await stat(configFile)).isFile();
-  } catch (e: any) {}
+  } catch (error: unknown) {}
   if (!isFile) {
     throw new Error(
       `Unable to find the main config file for the registry: "${configFile}"`,
@@ -68,7 +72,7 @@ export default async function validateOptions(
   }
   let version;
   if (newVersion) {
-    version = `v${coerceSemver(newVersion)}`;
+    version = `v${coerceSemver(newVer)}`;
     if (!validateSemver(version)) {
       throw new Error(
         `The new version is not a valid semver specifier (vX.Y.Z): "${version}"`,
@@ -78,9 +82,9 @@ export default async function validateOptions(
   return {
     debug: !!debug,
     omitMissing: !!omitMissing,
-    outputDir: path.resolve(outputDir),
+    outputDir: path.resolve(outDir),
     existingRegistry: theUrl,
-    sourceDir: path.resolve(sourceDir),
+    sourceDir: path.resolve(srcDir),
     configFile: path.resolve(configFile),
     newVersion: version,
   };

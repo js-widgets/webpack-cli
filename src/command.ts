@@ -9,6 +9,7 @@ import buildWebpackConfiguration from './webpack/buildWebpackConfiguration';
 import webpack, { Stats } from 'webpack';
 import { WidgetDefinition } from 'WidgetDefinition';
 import writeNewRegistry from './registry/writeNewRegistry';
+import { SideEffects } from 'common';
 
 function initProgram(program: Command, argv: string[]): void {
   program
@@ -40,7 +41,7 @@ function initProgram(program: Command, argv: string[]): void {
 export default async (
   program: Command,
   argv: string[],
-  logger: (input: string) => void,
+  logger: SideEffects,
 ): Promise<void> => {
   initProgram(program, argv);
   let opts;
@@ -56,9 +57,11 @@ export default async (
     logger(`Source dir: ${opts.sourceDir}`);
     logger(`Config file: ${opts.configFile}`);
     logger(`New version: ${opts.newVersion}`);
-  } catch (error: any) {
+  } catch (error: unknown) {
     logger(
-      `[FATAL ERROR] ${error.message || ''}\n\n${program.helpInformation()}`,
+      `[FATAL ERROR] ${
+        JSON.parse(JSON.stringify(error)) || ''
+      }\n\n${program.helpInformation()}`,
     );
     throw error;
   }
@@ -79,8 +82,8 @@ export default async (
     .map((filename) => {
       try {
         return loadWidgetDefinitionFile(filename);
-      } catch (error: any) {
-        logger(`[WARNING] ${error.message || ''}`);
+      } catch (error: unknown) {
+        logger(`[WARNING] ${JSON.parse(JSON.stringify(error)).message || ''}`);
       }
     })
     .filter((i) => i);
@@ -109,8 +112,10 @@ export default async (
         err || !stats ? reject(err) : resolve(stats);
       });
     });
-  } catch (error: any) {
-    compiler.getInfrastructureLogger('CLI').error(error.message);
+  } catch (error: unknown) {
+    compiler
+      .getInfrastructureLogger('CLI')
+      .error(JSON.parse(JSON.stringify(error)).message);
     process.exit(1);
     process.chdir(cwd);
   }

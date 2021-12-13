@@ -2,13 +2,14 @@ import path from 'path';
 import { Configuration } from 'webpack';
 import { WidgetDefinition } from 'WidgetDefinition';
 import { RegistryConfig } from 'RegistryConfig';
+import { SideEffects } from 'common';
 
 export default async function buildWebpackConfiguration(
   definitions: WidgetDefinition[],
   configuration: Configuration,
   registryConfig: string,
   outputDir: string,
-  logger?: (input: string) => void,
+  logger?: SideEffects,
 ): Promise<Configuration> {
   let configData: RegistryConfig;
   try {
@@ -27,15 +28,15 @@ export default async function buildWebpackConfiguration(
         {},
       );
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     logger && logger(error);
   }
-  const entry: Record<string, any> = {};
+  configuration.entry = {};
   for (const definition of definitions) {
     const libName = `render-${definition.shortcode}`.replace(/-./g, (match) =>
       match[1].toUpperCase(),
     );
-    entry[definition.shortcode] = {
+    configuration.entry[definition.shortcode] = {
       import: definition.entry,
       library: {
         name: libName,
@@ -44,7 +45,6 @@ export default async function buildWebpackConfiguration(
       },
     };
   }
-  configuration.entry = entry;
   if (typeof configuration.output === 'undefined') {
     configuration.output = {};
   }

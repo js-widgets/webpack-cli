@@ -1,4 +1,3 @@
-import { EntryObject } from 'webpack';
 import { Schema } from 'ajv';
 import { RegistryConfig } from 'RegistryConfig';
 
@@ -14,4 +13,4 @@ export type WidgetMetadataBasic = {
   externalPeerDependencies?: RegistryConfig['externalPeerDependencies'];
 };
 
-export type WidgetDefinition = WidgetMetadataBasic & { entry: EntryObject };
+export type WidgetDefinition = WidgetMetadataBasic & { entry: string };

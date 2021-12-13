@@ -8,10 +8,11 @@ import { promisify } from 'util';
 const readFile = promisify(fs.readFile);
 
 // This is necessary so the typescript compiler copies the schema to the dist.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as schema from './registry.schema.json';
 
 export default async function validateRegistry(
-  registry: any,
+  registry: unknown,
 ): Promise<WidgetRegistry> {
   const ajv = new Ajv();
   addFormats(ajv);

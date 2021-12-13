@@ -30,7 +30,7 @@ describe('validateOptions', () => {
     try {
       await validateOptions(rawOptions);
       expect(false).toBe(true);
-    } catch (error: any) {
+    } catch (error: unknown) {
       expect(error.message).toBe(
         'Unable to find the output dir: "./invalid-path"',
       );
@@ -47,7 +47,7 @@ describe('validateOptions', () => {
     try {
       await validateOptions(rawOptions);
       expect(false).toBe(true);
-    } catch (error: any) {
+    } catch (error: unknown) {
       expect(error.message).toBe(
         'Invalid URL for the existing registry: "./invalid-path"',
       );
@@ -64,7 +64,7 @@ describe('validateOptions', () => {
     try {
       await validateOptions(rawOptions);
       expect(false).toBe(true);
-    } catch (error: any) {
+    } catch (error: unknown) {
       expect(error.message).toBe(
         'Unable to find the source dir: "./invalid-directory"',
       );
@@ -81,7 +81,7 @@ describe('validateOptions', () => {
     try {
       await validateOptions(rawOptions);
       expect(false).toBe(true);
-    } catch (error: any) {
+    } catch (error: unknown) {
       expect(error.message).toMatch(/^The provided path is not a directory: /);
     }
   });
@@ -96,7 +96,7 @@ describe('validateOptions', () => {
     try {
       await validateOptions(rawOptions);
       expect(false).toBe(true);
-    } catch (error: any) {
+    } catch (error: unknown) {
       expect(error.message).toMatch(/^Unable to find the /);
     }
   });
