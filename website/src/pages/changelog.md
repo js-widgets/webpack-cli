@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/js-widgets/webpack-cli/compare/v2.1.0...v2.1.1) (2021-12-16)
+
+
+### Bug Fixes
+
+* trigger release ([7884880](https://github.com/js-widgets/webpack-cli/commit/78848808ee4d2b5ef9e8abf3bd5794f0a83a54ea))
+
 # [2.1.0](https://github.com/js-widgets/webpack-cli/compare/v2.0.3...v2.1.0) (2021-12-13)
 
 
