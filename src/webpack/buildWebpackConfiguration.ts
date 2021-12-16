@@ -31,7 +31,7 @@ export default async function buildWebpackConfiguration(
       configuration.externalsType = 'window';
     }
   } catch (error: unknown) {
-    logger && logger(error);
+    console.error(error);
   }
   configuration.entry = {};
   for (const definition of definitions) {
