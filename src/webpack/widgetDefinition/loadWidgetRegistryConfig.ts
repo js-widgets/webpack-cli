@@ -12,6 +12,7 @@ export default async function loadWidgetRegistryConfig(
   try {
     configData = { ...defaultData, ...(await import(filename)) };
   } catch (error: unknown) {
+    console.error(error);
     return defaultData;
   }
   return configData;

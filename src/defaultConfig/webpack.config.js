@@ -7,21 +7,11 @@ const { EnvironmentPlugin } = require('webpack');
 let mode = 'development';
 let devtool = 'inline-source-map';
 let target = 'web';
-const plugins = [
-  new CleanWebpackPlugin(),
-  new MiniCssExtractPlugin({
-    filename: '[name]/css/main.css',
-  }),
-  new EnvironmentPlugin({
-    NODE_ENV: 'development',
-    DEBUG: false,
-    PUBLIC_URL: '',
-    PUBLIC_ASSETS_URL: '',
-  }),
-];
 
+let isEnvProduction = false;
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
+  isEnvProduction = true;
   devtool = 'source-map';
 }
 
@@ -38,7 +28,7 @@ module.exports = {
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
-          {
+          isEnvProduction && {
             loader: MiniCssExtractPlugin.loader,
             options: { publicPath: '' },
           },
@@ -48,33 +38,42 @@ module.exports = {
             options: { options: {} },
           },
           'sass-loader',
-        ],
+        ].filter(Boolean),
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset',
       },
       {
-        test: /\.jsx?$/,
+        test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
         use: {
           // Do not defer to .babelrc because that will look into the target
           // project.
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/preset-env', '@babel/preset-typescript'],
             cacheDirectory: true,
           },
         },
       },
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-      },
     ],
   },
 
-  plugins,
+  plugins: [
+    new CleanWebpackPlugin(),
+    isEnvProduction &&
+      new MiniCssExtractPlugin({
+        filename: '[name]/css/main.[contenthash:8].css',
+        chunkFilename: '[name]/css/[contenthash:8].chunk.css',
+      }),
+    new EnvironmentPlugin({
+      NODE_ENV: 'development',
+      DEBUG: false,
+      PUBLIC_URL: '',
+      PUBLIC_ASSETS_URL: '',
+    }),
+  ].filter(Boolean),
   target,
   devtool,
 
