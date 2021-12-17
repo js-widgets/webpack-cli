@@ -1,9 +1,14 @@
 jest.mock('./registry/writeNewRegistry', () => jest.fn());
+import { mkdtemp } from 'fs';
+import { promisify } from 'util';
 import command from './command';
 import { Command } from 'commander';
 
+const mkdtempP = promisify(mkdtemp);
+
 describe('command', () => {
   it('should log the expected data', async () => {
+    const tempDir = await mkdtempP('/tmp/wdgt-test');
     const logger = jest.fn();
     expect(
       await command(
@@ -14,7 +19,7 @@ describe('command', () => {
           '--existing-registry',
           'https://example.org/tsconfig.json',
           '--output-dir',
-          './src/__testData__/output',
+          tempDir,
           '--new-version',
           '1.2.3-beta3',
           './src/__testData__/validProject',

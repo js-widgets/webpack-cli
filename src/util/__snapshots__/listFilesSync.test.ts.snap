@@ -2,7 +2,6 @@
 
 exports[`listFilesSync shows all the files 1`] = `
 Array [
-  "output/.gitignore",
   "validProject/.widgetRegistry/main.js",
   "widgetDefinitions/fake.widget.js",
 ]

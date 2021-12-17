@@ -1,7 +1,7 @@
 module.exports = {
-  register: ['../src/apps/**/*.widget.js'],
+  register: [],
   webpackFinal: (config) => {
-    return {...config, mode: 'none'}
+    return { ...config, mode: 'none' };
   },
   externalPeerDependencies: {
     react: {
