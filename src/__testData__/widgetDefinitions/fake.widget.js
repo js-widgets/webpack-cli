@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 module.exports = {
+  entry: './render.js',
   shortcode: 'fake',
   title: 'Fake Reviews',
   status: 'stable',

@@ -4,7 +4,7 @@ exports[`buildWebpackConfiguration builds the correct configuration 1`] = `
 Object {
   "entry": Object {
     "fake": Object {
-      "import": "/home/e0ipso/workspace/js/apps/js-widgets-cli/src/__testData__/widgetDefinitions/index.js",
+      "import": "./render.js",
       "library": Object {
         "export": "default",
         "name": "renderFake",
