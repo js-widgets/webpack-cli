@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buildWebpackConfiguration builds the correct configuration 1`] = `
+Object {
+  "entry": Object {
+    "fake": Object {
+      "import": "./render.js",
+      "library": Object {
+        "export": "default",
+        "name": "renderFake",
+        "type": "window",
+      },
+    },
+  },
+  "externals": Object {
+    "react": "React",
+    "react-dom": "ReactDOM",
+    "react-intl": "ReactIntl",
+    "react-slick": "Slider",
+  },
+  "externalsPresets": Object {
+    "webAsync": true,
+  },
+  "externalsType": "window",
+  "mode": "none",
+  "output": Object {
+    "assetModuleFilename": "[name]/images/[hash][ext][query]",
+    "filename": "[name]/js/main.js",
+    "path": "src/__testData__/widgetDefinitions/widgets",
+  },
+}
+`;
+
+exports[`buildWebpackConfiguration builds the correct configuration with empty data 1`] = `
+Object {
+  "entry": Object {},
+  "output": Object {
+    "assetModuleFilename": "[name]/images/[hash][ext][query]",
+    "filename": "[name]/js/main.js",
+    "path": "widgets",
+  },
+}
+`;
