@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/js-widgets/webpack-cli/compare/v2.1.1...v2.1.2) (2022-01-24)
+
+
+### Bug Fixes
+
+* correct postcss configuration ([#7](https://github.com/js-widgets/webpack-cli/issues/7)) ([dc57f31](https://github.com/js-widgets/webpack-cli/commit/dc57f318d9f401b8b8f456cbb2af3dc80263afe2))
+
 ## [2.1.1](https://github.com/js-widgets/webpack-cli/compare/v2.1.0...v2.1.1) (2021-12-16)
 
 
