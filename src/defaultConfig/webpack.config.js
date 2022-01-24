@@ -35,7 +35,11 @@ module.exports = {
           'css-loader',
           {
             loader: 'postcss-loader',
-            options: { options: {} },
+            options: {
+              postcssOptions: {
+                plugins: [['postcss-preset-env', {}]],
+              },
+            },
           },
           'sass-loader',
         ].filter(Boolean),
