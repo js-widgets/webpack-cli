@@ -45,7 +45,7 @@ module.exports = {
         ].filter(Boolean),
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         type: 'asset',
       },
       {
