@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/js-widgets/webpack-cli/compare/v2.1.2...v2.1.3) (2022-02-25)
+
+
+### Bug Fixes
+
+* let babel handle SVGs ([#8](https://github.com/js-widgets/webpack-cli/issues/8)) ([13031f7](https://github.com/js-widgets/webpack-cli/commit/13031f7e4aa4aa18dea87e00b5e18abfc43d9b7d))
+
 ## [2.1.2](https://github.com/js-widgets/webpack-cli/compare/v2.1.1...v2.1.2) (2022-01-24)
 
 
