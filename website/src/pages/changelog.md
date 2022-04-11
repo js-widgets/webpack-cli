@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/js-widgets/webpack-cli/compare/v2.1.3...v2.1.4) (2022-04-11)
+
+
+### Bug Fixes
+
+* improve webpack debug ([3dcd1f8](https://github.com/js-widgets/webpack-cli/commit/3dcd1f8514169b394cb8ada1c5dae71c40db2cd9))
+
 ## [2.1.3](https://github.com/js-widgets/webpack-cli/compare/v2.1.2...v2.1.3) (2022-02-25)
 
 
