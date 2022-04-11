@@ -1,4 +1,5 @@
 import path from 'path';
+import { inspect } from 'util';
 import { Configuration } from 'webpack';
 import { WidgetDefinition } from 'WidgetDefinition';
 import { RegistryConfig } from 'RegistryConfig';
@@ -60,7 +61,7 @@ export default async function buildWebpackConfiguration(
     logger('\n---------------------------------------------------');
     logger('              Webpack Config                       ');
     logger('---------------------------------------------------');
-    logger(JSON.stringify(configuration, null, 2));
+    logger(inspect(configuration, false, null, true));
     logger('---------------------------------------------------\n\n');
   }
   return configuration;
