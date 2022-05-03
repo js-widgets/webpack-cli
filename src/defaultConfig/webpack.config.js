@@ -28,10 +28,12 @@ module.exports = {
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
-          isEnvProduction && {
-            loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: '' },
-          },
+          isEnvProduction
+            ? {
+                loader: MiniCssExtractPlugin.loader,
+                options: { publicPath: '' },
+              }
+            : 'style-loader',
           'css-loader',
           {
             loader: 'postcss-loader',
@@ -42,7 +44,7 @@ module.exports = {
             },
           },
           'sass-loader',
-        ].filter(Boolean),
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
