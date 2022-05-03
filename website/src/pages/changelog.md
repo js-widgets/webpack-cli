@@ -1,3 +1,10 @@
+## [2.1.5](https://github.com/js-widgets/webpack-cli/compare/v2.1.4...v2.1.5) (2022-05-03)
+
+
+### Bug Fixes
+
+* default to style-loader in development ([#9](https://github.com/js-widgets/webpack-cli/issues/9)) ([82a7cd0](https://github.com/js-widgets/webpack-cli/commit/82a7cd06cf02347817e05acdc75fc101feb1fee4))
+
 ## [2.1.4](https://github.com/js-widgets/webpack-cli/compare/v2.1.3...v2.1.4) (2022-04-11)
 
 
