@@ -1,3 +1,10 @@
+## [2.1.6](https://github.com/js-widgets/webpack-cli/compare/v2.1.5...v2.1.6) (2022-05-18)
+
+
+### Bug Fixes
+
+* use per widget chunk files ([#10](https://github.com/js-widgets/webpack-cli/issues/10)) ([aa2f2b5](https://github.com/js-widgets/webpack-cli/commit/aa2f2b516fd628771b49c6ef8cec99e4f40da0b5))
+
 ## [2.1.5](https://github.com/js-widgets/webpack-cli/compare/v2.1.4...v2.1.5) (2022-05-03)
 
 
