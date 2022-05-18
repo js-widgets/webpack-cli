@@ -25,6 +25,7 @@ Object {
   "mode": "none",
   "output": Object {
     "assetModuleFilename": "[name]/images/[hash][ext][query]",
+    "chunkFilename": "[name]/js/[contenthash:8].chunk.js",
     "filename": "[name]/js/main.js",
     "path": "src/__testData__/widgetDefinitions/widgets",
   },
@@ -36,6 +37,7 @@ Object {
   "entry": Object {},
   "output": Object {
     "assetModuleFilename": "[name]/images/[hash][ext][query]",
+    "chunkFilename": "[name]/js/[contenthash:8].chunk.js",
     "filename": "[name]/js/main.js",
     "path": "widgets",
   },
