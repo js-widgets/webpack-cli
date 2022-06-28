@@ -1,3 +1,11 @@
+## [2.1.9](https://github.com/js-widgets/webpack-cli/compare/v2.1.8...v2.1.9) (2022-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency glob to v8 ([#29](https://github.com/js-widgets/webpack-cli/issues/29)) ([f844d0f](https://github.com/js-widgets/webpack-cli/commit/f844d0f839bc1c7ef3569b4f345049b77e1b3f2f))
+* **deps:** update docusaurus monorepo to v2.0.0-beta.21 ([#25](https://github.com/js-widgets/webpack-cli/issues/25)) ([a93597a](https://github.com/js-widgets/webpack-cli/commit/a93597ae52f75e387c40bce355e919a65e4cab55))
+
 ## [2.1.8](https://github.com/js-widgets/webpack-cli/compare/v2.1.7...v2.1.8) (2022-06-28)
 
 
