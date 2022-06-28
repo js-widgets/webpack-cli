@@ -62,7 +62,7 @@
     "ajv": "^8.6.2",
     "ajv-formats": "^2.1.1",
     "clean-webpack-plugin": "^4.0.0",
-    "commander": "^8.1.0",
+    "commander": "^9.0.0",
     "glob": "^7.1.7",
     "mini-css-extract-plugin": "^2.2.0",
     "semver": "^7.3.5",
