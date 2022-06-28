@@ -42,7 +42,7 @@
     "@types/glob": "7.1.4",
     "@types/jest": "27.5.2",
     "@types/node": "16.7.2",
-    "@types/semver": "7.3.8",
+    "@types/semver": "7.3.10",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
     "conventional-changelog-conventionalcommits": "4.6.0",
