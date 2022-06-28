@@ -57,7 +57,6 @@ export default async function buildWebpackConfiguration(
       ? '[name]/js/main.[contenthash:8].js'
       : '[name]/js/main.js';
   configuration.output.chunkFilename = '[name]/js/[contenthash:8].chunk.js';
-  configuration.output.assetModuleFilename = '[name]/images/[hash][ext][query]';
   if (logger) {
     logger('\n---------------------------------------------------');
     logger('              Webpack Config                       ');
