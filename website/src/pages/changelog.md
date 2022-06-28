@@ -1,3 +1,10 @@
+## [2.1.8](https://github.com/js-widgets/webpack-cli/compare/v2.1.7...v2.1.8) (2022-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commander to v9 ([#22](https://github.com/js-widgets/webpack-cli/issues/22)) ([025a992](https://github.com/js-widgets/webpack-cli/commit/025a992d332e6a8d9451c64f76861c55964ad665))
+
 ## [2.1.7](https://github.com/js-widgets/webpack-cli/compare/v2.1.6...v2.1.7) (2022-06-28)
 
 
