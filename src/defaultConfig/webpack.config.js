@@ -21,7 +21,9 @@ module.exports = {
   profile: true,
   entry: {},
 
-  output: {},
+  output: {
+    assetModuleFilename: '[name]/images/[hash][ext][query]',
+  },
 
   module: {
     rules: [
