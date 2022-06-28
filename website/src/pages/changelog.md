@@ -1,3 +1,10 @@
+## [2.1.7](https://github.com/js-widgets/webpack-cli/compare/v2.1.6...v2.1.7) (2022-06-28)
+
+
+### Bug Fixes
+
+* allow overriding asset location ([#11](https://github.com/js-widgets/webpack-cli/issues/11)) ([30ed35f](https://github.com/js-widgets/webpack-cli/commit/30ed35fea3242ccca6b32651c958e5b748630aa8))
+
 ## [2.1.6](https://github.com/js-widgets/webpack-cli/compare/v2.1.5...v2.1.6) (2022-05-18)
 
 
