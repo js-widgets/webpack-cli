@@ -1,3 +1,10 @@
+## [2.1.10](https://github.com/js-widgets/webpack-cli/compare/v2.1.9...v2.1.10) (2022-06-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency prism-react-renderer to v1.3.3 ([#41](https://github.com/js-widgets/webpack-cli/issues/41)) ([611eeff](https://github.com/js-widgets/webpack-cli/commit/611eeffbbbfabe43b12f7b7d64ff3840ba46852c))
+
 ## [2.1.9](https://github.com/js-widgets/webpack-cli/compare/v2.1.8...v2.1.9) (2022-06-28)
 
 
