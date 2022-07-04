@@ -1,3 +1,11 @@
+## [2.1.12](https://github.com/js-widgets/webpack-cli/compare/v2.1.11...v2.1.12) (2022-07-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency clsx to v1.2.0 ([#60](https://github.com/js-widgets/webpack-cli/issues/60)) ([706835d](https://github.com/js-widgets/webpack-cli/commit/706835d592c372186c49f64b0a72cc1f27018731))
+* **deps:** update dependency prism-react-renderer to v1.3.5 ([#58](https://github.com/js-widgets/webpack-cli/issues/58)) ([ef847ec](https://github.com/js-widgets/webpack-cli/commit/ef847ec39f872ab7eb1519ea56ce2ae1abfd4e3e))
+
 ## [2.1.11](https://github.com/js-widgets/webpack-cli/compare/v2.1.10...v2.1.11) (2022-06-29)
 
 
