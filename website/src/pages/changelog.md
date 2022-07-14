@@ -1,3 +1,11 @@
+## [2.1.13](https://github.com/js-widgets/webpack-cli/compare/v2.1.12...v2.1.13) (2022-07-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency clsx to v1.2.1 ([#62](https://github.com/js-widgets/webpack-cli/issues/62)) ([9cdf791](https://github.com/js-widgets/webpack-cli/commit/9cdf791978b48b1e0d64c4e9590917634a48a83e))
+* **deps:** update docusaurus monorepo to v2.0.0-beta.22 ([#64](https://github.com/js-widgets/webpack-cli/issues/64)) ([55549c3](https://github.com/js-widgets/webpack-cli/commit/55549c3b31d19f7c8b8dd4a1ee509757ba287899))
+
 ## [2.1.12](https://github.com/js-widgets/webpack-cli/compare/v2.1.11...v2.1.12) (2022-07-04)
 
 
