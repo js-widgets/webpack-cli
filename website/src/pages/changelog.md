@@ -1,3 +1,10 @@
+## [2.1.15](https://github.com/js-widgets/webpack-cli/compare/v2.1.14...v2.1.15) (2022-07-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @svgr/webpack to v6.3.0 ([#70](https://github.com/js-widgets/webpack-cli/issues/70)) ([036dc3e](https://github.com/js-widgets/webpack-cli/commit/036dc3e84c48d5a4412b120e9a605cd3ebd2c43f))
+
 ## [2.1.14](https://github.com/js-widgets/webpack-cli/compare/v2.1.13...v2.1.14) (2022-07-18)
 
 
