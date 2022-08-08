@@ -745,10 +745,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@formatjs/cli@5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@formatjs/cli/-/cli-5.0.5.tgz#61e087bb5fcf9297555b94654af605acb639cb03"
-  integrity sha512-UO06zsATt3riLHmad4JoUHARy6uXdG/HxNYdJgeIryXfxUTceXp+eFXVFAVbjVKopVdi1MDotYU/P6M2itqBCg==
+"@formatjs/cli@5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@formatjs/cli/-/cli-5.0.7.tgz#3e681fc5c8117a27fd28700adc7819cf144a50e5"
+  integrity sha512-++4ojNPYCa3YQePR7zoNk+q8mp4gF35PUWffR5Ey4PEOsUdyBjSRgCFju/MzsMZRl8R/TUdR8t9AHOu3qIW/BA==
 
 "@gar/promisify@^1.1.3":
   version "1.1.3"
