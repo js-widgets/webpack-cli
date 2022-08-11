@@ -1,11 +1,14 @@
-import { Schema } from 'ajv';
+import { value Schema } from 'ajv';
 
 export type WidgetMetadataBasic = {
   shortcode: string;
   title: string;
   status?: 'stable' | 'beta' | 'wip' | 'deprecated';
   settingsSchema?: {
-    fields: Schema;
+    type: 'object';
+    properties: {
+      fields: Schema;
+    };
   };
   description?: string;
   additionalCustomProperties?: Record<string, scalar>;
