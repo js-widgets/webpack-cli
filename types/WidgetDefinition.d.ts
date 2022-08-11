@@ -1,4 +1,4 @@
-import { value Schema } from 'ajv';
+import { Schema } from 'ajv';
 
 export type WidgetMetadataBasic = {
   shortcode: string;
