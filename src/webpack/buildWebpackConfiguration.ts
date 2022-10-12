@@ -4,6 +4,7 @@ import { Configuration } from 'webpack';
 import { WidgetDefinition } from 'WidgetDefinition';
 import { RegistryConfig } from 'RegistryConfig';
 import { SideEffects } from 'common';
+import CopyPlugin from 'copy-webpack-plugin';
 
 export default async function buildWebpackConfiguration(
   definitions: WidgetDefinition[],
@@ -57,6 +58,17 @@ export default async function buildWebpackConfiguration(
       ? '[name]/js/main.[contenthash:8].js'
       : '[name]/js/main.js';
   configuration.output.chunkFilename = '[name]/js/[contenthash:8].chunk.js';
+  // Dynamic thumbnail copy.
+  const copyOptions = definitions.map((definition) => ({
+    from: 'thumbnail.png',
+    to: path.join(
+      configuration.output?.path || '',
+      definition.shortcode,
+      '[name].[contenthash:8][ext]',
+    ),
+    context: path.dirname(definition.entry),
+  }));
+  configuration.plugins?.push(new CopyPlugin({ patterns: copyOptions }));
   if (logger) {
     logger('\n---------------------------------------------------');
     logger('              Webpack Config                       ');
