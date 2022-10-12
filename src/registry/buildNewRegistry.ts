@@ -31,6 +31,7 @@ export default function buildNewRegistry(
       description,
       additionalCustomProperties,
       useExternalPeerDependencies = [],
+      preview = {},
     }): WidgetRegistryItem => {
       const existingEntry: WidgetRegistryItem | undefined =
         existingRegistry.find((item) => item.shortcode === shortcode);
@@ -53,6 +54,13 @@ export default function buildNewRegistry(
         },
         {},
       );
+      const files = compiledFiles.get(shortcode) || [];
+      const thumbnail = files.find((file) =>
+        file.match(/(thumbnail)(\..{8})?(\.png)/),
+      );
+      if (thumbnail) {
+        preview.thumbnail = thumbnail;
+      }
       const newItem: WidgetRegistryItem = {
         files: compiledFiles.get(shortcode) || [],
         createdAt,
@@ -68,6 +76,7 @@ export default function buildNewRegistry(
         shortcode,
         version,
         externalPeerDependencies,
+        preview,
       };
       return newItem;
     },

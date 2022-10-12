@@ -12,6 +12,10 @@ export type WidgetMetadataBasic = {
   };
   description?: string;
   additionalCustomProperties?: Record<string, scalar>;
+  preview?: {
+    thumbnail?: string;
+    url?: string;
+  };
 };
 
 export type WidgetDefinition = WidgetMetadataBasic & {
