@@ -68,7 +68,9 @@ export default async function buildWebpackConfiguration(
     ),
     context: path.dirname(definition.entry),
   }));
-  configuration.plugins?.push(new CopyPlugin({ patterns: copyOptions }));
+  if (copyOptions.length) {
+    configuration.plugins?.push(new CopyPlugin({ patterns: copyOptions }));
+  }
   if (logger) {
     logger('\n---------------------------------------------------');
     logger('              Webpack Config                       ');

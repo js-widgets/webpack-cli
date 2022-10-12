@@ -106,6 +106,16 @@ Object {
         "PUBLIC_ASSETS_URL",
       ],
     },
+    CopyPlugin {
+      "options": Object {},
+      "patterns": Array [
+        Object {
+          "context": ".",
+          "from": "thumbnail.png",
+          "to": "src/__testData__/widgetDefinitions/widgets/fake/[name].[contenthash:8][ext]",
+        },
+      ],
+    },
   ],
   "profile": true,
   "resolve": Object {
