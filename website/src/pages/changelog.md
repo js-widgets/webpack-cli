@@ -1,3 +1,18 @@
+# [2.2.0](https://github.com/js-widgets/webpack-cli/compare/v2.1.15...v2.2.0) (2022-10-12)
+
+
+### Bug Fixes
+
+* correct the widget definition type ([#76](https://github.com/js-widgets/webpack-cli/issues/76)) ([33d2490](https://github.com/js-widgets/webpack-cli/commit/33d2490771756cf0a9d855a8e9440f1a881ccd75))
+* **deps:** update dependency @svgr/webpack to v6.3.1 ([#72](https://github.com/js-widgets/webpack-cli/issues/72)) ([4be59ae](https://github.com/js-widgets/webpack-cli/commit/4be59aed1aa8efc560cfa5515b8d6c022662a8d9))
+* **deps:** update docusaurus monorepo to v2.0.1 ([#74](https://github.com/js-widgets/webpack-cli/issues/74)) ([fc04ed6](https://github.com/js-widgets/webpack-cli/commit/fc04ed63903faf70accacf444ef30f29437d4a1b))
+* **deps:** update docusaurus monorepo to v2.1.0 ([#87](https://github.com/js-widgets/webpack-cli/issues/87)) ([c80ec95](https://github.com/js-widgets/webpack-cli/commit/c80ec95c03b81cab43c8a0f13986b62f21e7a8ab))
+
+
+### Features
+
+* add support for previews ([#96](https://github.com/js-widgets/webpack-cli/issues/96)) ([c305da9](https://github.com/js-widgets/webpack-cli/commit/c305da955a7857df2a84541bc5919c3a236d09ba)), closes [#95](https://github.com/js-widgets/webpack-cli/issues/95)
+
 ## [2.1.15](https://github.com/js-widgets/webpack-cli/compare/v2.1.14...v2.1.15) (2022-07-19)
 
 
