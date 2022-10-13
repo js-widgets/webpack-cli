@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/js-widgets/webpack-cli/compare/v2.2.0...v2.2.1) (2022-10-13)
+
+
+### Bug Fixes
+
+* generate fully qualified URL for thumbnail ([#99](https://github.com/js-widgets/webpack-cli/issues/99)) ([6da6fc7](https://github.com/js-widgets/webpack-cli/commit/6da6fc771c865076d7f6156be94252e656c30e50)), closes [#98](https://github.com/js-widgets/webpack-cli/issues/98)
+
 # [2.2.0](https://github.com/js-widgets/webpack-cli/compare/v2.1.15...v2.2.0) (2022-10-12)
 
 
