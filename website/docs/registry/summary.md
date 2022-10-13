@@ -14,9 +14,11 @@ output
 ├── registry.json
 └── widgets
     ├── inline-notification
+    │   ├── thumbnail.png
     │   └── js
     │       └── main.js
     └── toast-notification
+        ├── thumbnail.png
         └── js
             └── main.js
 ```
