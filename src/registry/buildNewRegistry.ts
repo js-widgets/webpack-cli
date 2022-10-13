@@ -55,11 +55,14 @@ export default function buildNewRegistry(
         {},
       );
       const files = compiledFiles.get(shortcode) || [];
-      const thumbnail = files.find((file) =>
+      const directoryUrl = templateUrl
+        .replace(/{shortcode}/, shortcode)
+        .replace(/{majorVersion}/, `v${semverMajor(version)}`);
+      const thumbnail_filename = files.find((file) =>
         file.match(/(thumbnail)(\..{8})?(\.png)/),
       );
-      if (thumbnail) {
-        preview.thumbnail = thumbnail;
+      if (thumbnail_filename) {
+        preview.thumbnail = `${directoryUrl}/${thumbnail_filename}`;
       }
       const newItem: WidgetRegistryItem = {
         files: compiledFiles.get(shortcode) || [],
@@ -70,9 +73,7 @@ export default function buildNewRegistry(
         settingsSchema,
         description,
         ...(additionalCustomProperties || {}),
-        directoryUrl: templateUrl
-          .replace(/{shortcode}/, shortcode)
-          .replace(/{majorVersion}/, `v${semverMajor(version)}`),
+        directoryUrl,
         shortcode,
         version,
         externalPeerDependencies,
