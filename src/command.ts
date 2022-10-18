@@ -29,7 +29,7 @@ function initProgram(program: Command, argv: string[]): void {
     )
     .option(
       '--widget-definitions <widget-definitions>',
-      'when used, the glob(s) provided here will supersede the "registry" key in the config file. Use commas to separate multiple values. Relative glob patterns are interpreted from the .widgetRegistry/ location.',
+      'when used, the glob(s) provided here will supersede the "register" key in the config file. Use commas to separate multiple values. Relative glob patterns are interpreted from the .widgetRegistry/ location.',
     )
     .option(
       '--omit-missing',
