@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/js-widgets/webpack-cli/compare/v2.2.4...v2.3.0) (2022-10-18)
+
+
+### Features
+
+* pass widgets to compile via CLI ([#110](https://github.com/js-widgets/webpack-cli/issues/110)) ([6ce2265](https://github.com/js-widgets/webpack-cli/commit/6ce22659c295add836d3c640a074a55c1a2c56a4)), closes [#107](https://github.com/js-widgets/webpack-cli/issues/107)
+
 ## [2.2.4](https://github.com/js-widgets/webpack-cli/compare/v2.2.3...v2.2.4) (2022-10-18)
 
 
