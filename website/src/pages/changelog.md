@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/js-widgets/webpack-cli/compare/v2.2.1...v2.2.2) (2022-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency glob to ^8.0.3 ([3e1ca04](https://github.com/js-widgets/webpack-cli/commit/3e1ca04d0c4ba35e54a0aded58b7b2e1badc8c98))
+
 ## [2.2.1](https://github.com/js-widgets/webpack-cli/compare/v2.2.0...v2.2.1) (2022-10-13)
 
 
