@@ -8,9 +8,16 @@ describe('validateOptions', () => {
       existingRegistry: 'https://example.org/tsconfig.json',
       sourceDir: './src/__testData__/validProject',
       newVersion: '9.0.11',
+      widgetDefinitions: 'foo,bar*.js,baz',
     };
-    const { debug, outputDir, existingRegistry, sourceDir, configFile } =
-      await validateOptions(rawOptions);
+    const {
+      debug,
+      outputDir,
+      existingRegistry,
+      sourceDir,
+      configFile,
+      widgetDefinitions,
+    } = await validateOptions(rawOptions);
     expect(debug).toBe(false);
     expect(outputDir).toMatch(/\/src/);
     expect(existingRegistry?.href).toMatch(/\/tsconfig\.json/);
@@ -18,6 +25,7 @@ describe('validateOptions', () => {
     expect(configFile).toMatch(
       /\/src\/__testData__\/validProject\/.widgetRegistry\/main.js/,
     );
+    expect(widgetDefinitions).toEqual(['foo', 'bar*.js', 'baz']);
   });
 
   it('should fail if outputDir does not exist', async () => {

@@ -9,16 +9,22 @@ import loadWidgetRegistryConfig from './loadWidgetRegistryConfig';
  * @param {string} configFile
  *   The path to the main.js file that contains all the widget registry config.
  *
+ * @param widgetDefinitionGlobs
+ *   The list of paths leading to the widget definitions.
+ *
  * @return {string[]}
  *   The list of paths leading to the widget definitions.
  */
 export default async function discoverWidgetDefinitionFiles(
   configFile: string,
+  widgetDefinitionGlobs: string[],
 ): Promise<string[]> {
   const configData = await loadWidgetRegistryConfig(configFile);
   const workingDir = dirname(configFile);
   // Discover the widget definitions based on the glob pattern.
-  const register = configData.register;
+  const register = widgetDefinitionGlobs.length
+    ? widgetDefinitionGlobs
+    : configData.register;
   const unflattenned = await Promise.all(
     register.map((pattern): Promise<string[]> => {
       return new Promise((resolve, reject) =>
