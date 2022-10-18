@@ -6,4 +6,5 @@ export declare type CLIOptions = {
   configFile: string;
   omitMissing: boolean;
   newVersion?: string;
+  widgetDefinitions: string[];
 };

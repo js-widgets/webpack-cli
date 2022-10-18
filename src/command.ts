@@ -28,6 +28,10 @@ function initProgram(program: Command, argv: string[]): void {
       'a path to a directory where to save all the compiled widgets and the registry. CAUTION: the directory will be emptied.',
     )
     .option(
+      '--widget-definitions <widget-definitions>',
+      'when used, the glob(s) provided here will supersede the "registry" key in the config file. Use commas to separate multiple values. Relative glob patterns are interpreted from the .widgetRegistry/ location.',
+    )
+    .option(
       '--omit-missing',
       'when used, widgets in the existing registry that cannot be found will not appear in the new registry.',
     )
@@ -73,6 +77,7 @@ export default async (
   const configuration = (await import(defaultWebpackConfigFile)).default;
   const widgetDefinitionFiles = await discoverWidgetDefinitionFiles(
     opts.configFile,
+    opts.widgetDefinitions,
   );
   logger('\nWidget definition files:');
   logger('  - ' + widgetDefinitionFiles.join(`\n  - `));

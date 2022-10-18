@@ -18,6 +18,7 @@ export default async function validateOptions(
     existingRegistry,
     sourceDir,
     newVersion,
+    widgetDefinitions,
   } = rawOptions;
   let isDir = false;
   // Some string casting to deal easily with types.
@@ -87,5 +88,8 @@ export default async function validateOptions(
     sourceDir: path.resolve(srcDir),
     configFile: path.resolve(configFile),
     newVersion: version,
+    widgetDefinitions: widgetDefinitions
+      ? `${widgetDefinitions}`.split(',').map((s: string) => s.trim())
+      : [],
   };
 }
