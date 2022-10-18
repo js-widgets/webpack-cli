@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/js-widgets/webpack-cli/compare/v2.3.1...v2.3.2) (2022-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commander to ^9.4.1 ([c8cb045](https://github.com/js-widgets/webpack-cli/commit/c8cb045874281b78f12210eda8c44e2e8e965ccd))
+
 ## [2.3.1](https://github.com/js-widgets/webpack-cli/compare/v2.3.0...v2.3.1) (2022-10-18)
 
 
