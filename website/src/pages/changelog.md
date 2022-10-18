@@ -1,3 +1,10 @@
+## [2.2.4](https://github.com/js-widgets/webpack-cli/compare/v2.2.3...v2.2.4) (2022-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency semver to ^7.3.8 ([6ab973b](https://github.com/js-widgets/webpack-cli/commit/6ab973b3a8da5c8e1c382ab64645fbbb0ab0795b))
+
 ## [2.2.3](https://github.com/js-widgets/webpack-cli/compare/v2.2.2...v2.2.3) (2022-10-18)
 
 
