@@ -14,11 +14,14 @@ export default async function buildWebpackConfiguration(
   logger?: SideEffects,
 ): Promise<Configuration> {
   let configData: RegistryConfig;
+  // Default to do no changes if it is not defined.
+  let webpackFinal = (c: Configuration): Promise<Configuration> =>
+    Promise.resolve(c);
   try {
     const importData = await import(registryConfig);
     configData = importData?.default || importData;
     if (configData.webpackFinal) {
-      configuration = await configData.webpackFinal(configuration);
+      webpackFinal = configData.webpackFinal;
     }
     const { externalPeerDependencies = {} } = configData;
     if (Object.keys(externalPeerDependencies).length) {
@@ -66,11 +69,14 @@ export default async function buildWebpackConfiguration(
       definition.shortcode,
       '[name].[contenthash:8][ext]',
     ),
+    noErrorOnMissing: true,
     context: path.dirname(definition.entry),
   }));
   if (copyOptions.length) {
     configuration.plugins?.push(new CopyPlugin({ patterns: copyOptions }));
   }
+  // Execute the function in .widgetRegistry/main.js
+  configuration = await webpackFinal(configuration);
   if (logger) {
     logger('\n---------------------------------------------------');
     logger('              Webpack Config                       ');
