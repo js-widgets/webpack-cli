@@ -20,11 +20,15 @@ export default async function discoverWidgetDefinitionFiles(
   widgetDefinitionGlobs: string[],
 ): Promise<string[]> {
   const configData = await loadWidgetRegistryConfig(configFile);
-  const workingDir = dirname(configFile);
+  let workingDir = dirname(configFile);
+  let register = configData.register;
+  // If there are widget definitions coming from the CLI they are relative to
+  // the current working directory.
+  if (widgetDefinitionGlobs.length) {
+    workingDir = process.cwd();
+    register = widgetDefinitionGlobs;
+  }
   // Discover the widget definitions based on the glob pattern.
-  const register = widgetDefinitionGlobs.length
-    ? widgetDefinitionGlobs
-    : configData.register;
   const unflattenned = await Promise.all(
     register.map((pattern): Promise<string[]> => {
       return new Promise((resolve, reject) =>
