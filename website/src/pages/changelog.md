@@ -1,3 +1,16 @@
+# [3.0.0](https://github.com/js-widgets/webpack-cli/compare/v2.3.4...v3.0.0) (2022-10-20)
+
+
+### Features
+
+* allow altering all configuration ([#115](https://github.com/js-widgets/webpack-cli/issues/115)) ([ccea0f5](https://github.com/js-widgets/webpack-cli/commit/ccea0f518b358f27a420739b05830d46027eb3d0)), closes [#112](https://github.com/js-widgets/webpack-cli/issues/112) [#113](https://github.com/js-widgets/webpack-cli/issues/113) [#114](https://github.com/js-widgets/webpack-cli/issues/114)
+
+
+### BREAKING CHANGES
+
+* webpackFinal from user land will receive a configuration object with additional autocomputed properties.
+* --widget-definitions CLI option now interprets paths from CWD and not as if they came from the config file.
+
 ## [2.3.4](https://github.com/js-widgets/webpack-cli/compare/v2.3.3...v2.3.4) (2022-10-19)
 
 
