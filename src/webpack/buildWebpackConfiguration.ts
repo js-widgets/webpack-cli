@@ -15,7 +15,8 @@ export default async function buildWebpackConfiguration(
 ): Promise<Configuration> {
   let configData: RegistryConfig;
   // Default to do no changes if it is not defined.
-  let webpackFinal = (c: Configuration): Promise<Configuration> => Promise.resolve(c);
+  let webpackFinal = (c: Configuration): Promise<Configuration> =>
+    Promise.resolve(c);
   try {
     const importData = await import(registryConfig);
     configData = importData?.default || importData;
