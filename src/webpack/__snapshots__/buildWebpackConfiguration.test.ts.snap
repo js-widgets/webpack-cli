@@ -112,6 +112,7 @@ Object {
         Object {
           "context": ".",
           "from": "thumbnail.png",
+          "noErrorOnMissing": true,
           "to": "src/__testData__/widgetDefinitions/widgets/fake/[name].[contenthash:8][ext]",
         },
       ],
