@@ -141,6 +141,7 @@ export default async (
     pathToCompiledWidgets,
     pathToNewRegistry,
     opts.newVersion,
+    logger,
   );
   logger(
     `\n✅ SUCCESS!\n  - New registry written to "${pathToNewRegistry}".\n  - Webpack compiled all widgets in "${pathToCompiledWidgets}".\n  - New registry version is "${newVersion}".\n`,
