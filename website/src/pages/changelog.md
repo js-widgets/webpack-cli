@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/js-widgets/webpack-cli/compare/v3.0.2...v3.1.0) (2022-11-03)
+
+
+### Features
+
+* default empty registry ([#130](https://github.com/js-widgets/webpack-cli/issues/130)) ([bebf81f](https://github.com/js-widgets/webpack-cli/commit/bebf81fe37751a93d54030cb3a613ff358993e15)), closes [#129](https://github.com/js-widgets/webpack-cli/issues/129)
+
 ## [3.0.2](https://github.com/js-widgets/webpack-cli/compare/v3.0.1...v3.0.2) (2022-10-29)
 
 
