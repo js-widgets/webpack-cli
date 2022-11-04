@@ -7,7 +7,7 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=v14.21.0"
+    "node": ">=v14.21.1"
   },
   "main": "build/src/index.js",
   "bin": {
