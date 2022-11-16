@@ -65,7 +65,7 @@
     "commander": "^9.4.1",
     "copy-webpack-plugin": "^11.0.0",
     "glob": "^8.0.3",
-    "mini-css-extract-plugin": "^2.6.1",
+    "mini-css-extract-plugin": "^2.7.0",
     "semver": "^7.3.8",
     "webpack": "^5.75.0"
   }
