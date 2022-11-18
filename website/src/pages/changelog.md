@@ -1,3 +1,10 @@
+## [3.1.4](https://github.com/js-widgets/webpack-cli/compare/v3.1.3...v3.1.4) (2022-11-18)
+
+
+### Bug Fixes
+
+* support chunks in the correct folder ([#142](https://github.com/js-widgets/webpack-cli/issues/142)) ([1cfe4ff](https://github.com/js-widgets/webpack-cli/commit/1cfe4ff41ac526118fd339dd47e976d4876ae12a))
+
 ## [3.1.3](https://github.com/js-widgets/webpack-cli/compare/v3.1.2...v3.1.3) (2022-11-17)
 
 
