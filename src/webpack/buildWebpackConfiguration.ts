@@ -60,7 +60,8 @@ export default async function buildWebpackConfiguration(
     configuration.mode === 'production'
       ? '[name]/js/main.[contenthash:8].js'
       : '[name]/js/main.js';
-  configuration.output.chunkFilename = '[name]/js/[contenthash:8].chunk.js';
+  configuration.output.chunkFilename = ({ runtime }) =>
+    `${runtime}/js/[contenthash:8].chunk.js`;
   // Dynamic thumbnail copy.
   const copyOptions = definitions.map((definition) => ({
     from: 'thumbnail.png',
