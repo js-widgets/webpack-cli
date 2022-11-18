@@ -69,7 +69,7 @@ Object {
   },
   "output": Object {
     "assetModuleFilename": "[name]/images/[hash][ext][query]",
-    "chunkFilename": "[name]/js/[contenthash:8].chunk.js",
+    "chunkFilename": [Function],
     "filename": "[name]/js/main.js",
     "path": "src/__testData__/widgetDefinitions/widgets",
   },
@@ -181,7 +181,7 @@ Object {
   },
   "output": Object {
     "assetModuleFilename": "[name]/images/[hash][ext][query]",
-    "chunkFilename": "[name]/js/[contenthash:8].chunk.js",
+    "chunkFilename": [Function],
     "filename": "[name]/js/main.js",
     "path": "widgets",
   },
