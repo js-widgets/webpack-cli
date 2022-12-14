@@ -25,7 +25,7 @@ jobs:
           npx make-coverage-badge --output-path ./website/build/img/coverage.svg
       - name: Release to NPM using Semantic Release
         if: ${{ success() }}
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
