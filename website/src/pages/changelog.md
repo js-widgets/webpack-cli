@@ -1,3 +1,10 @@
+## [3.1.10](https://github.com/js-widgets/webpack-cli/compare/v3.1.9...v3.1.10) (2023-01-27)
+
+
+### Bug Fixes
+
+* **deps:** update docusaurus monorepo to v2.3.0 ([87d8a5f](https://github.com/js-widgets/webpack-cli/commit/87d8a5f8cdbba7c604fd4aaf8243f25fad8295ab))
+
 ## [3.1.9](https://github.com/js-widgets/webpack-cli/compare/v3.1.8...v3.1.9) (2023-01-15)
 
 
