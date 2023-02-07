@@ -76,7 +76,7 @@
           "title": "Status",
           "maxLength": 255,
           "description": "Denotes the status of the widget and its readiness for production.",
-          "enum": ["stable", "beta", "wip", "deprecated"]
+          "enum": ["stable", "beta", "wip", "deprecated", "unknown"]
         },
         "help": {
           "type": "string",
