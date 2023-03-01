@@ -64,7 +64,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "commander": "^9.5.0",
     "copy-webpack-plugin": "^11.0.0",
-    "glob": "^8.1.0",
+    "glob": "^9.1.2",
     "mini-css-extract-plugin": "^2.7.2",
     "semver": "^7.3.8",
     "webpack": "^5.75.0"
