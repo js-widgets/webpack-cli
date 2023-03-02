@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/js-widgets/webpack-cli/compare/v3.2.0...v3.2.1) (2023-03-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commander to v10 ([#195](https://github.com/js-widgets/webpack-cli/issues/195)) ([cd04fb5](https://github.com/js-widgets/webpack-cli/commit/cd04fb58934d601988c3fc36869f106e68c352c6))
+
 # [3.2.0](https://github.com/js-widgets/webpack-cli/compare/v3.1.11...v3.2.0) (2023-03-02)
 
 
