@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/js-widgets/webpack-cli/compare/v3.1.11...v3.2.0) (2023-03-02)
+
+
+### Features
+
+* add 'unknown' as a valid status ([#215](https://github.com/js-widgets/webpack-cli/issues/215)) ([c9d91fd](https://github.com/js-widgets/webpack-cli/commit/c9d91fd62ba3e747afe1419054f768826ce5836c))
+
 ## [3.1.11](https://github.com/js-widgets/webpack-cli/compare/v3.1.10...v3.1.11) (2023-02-03)
 
 
