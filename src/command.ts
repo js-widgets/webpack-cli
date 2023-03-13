@@ -121,6 +121,7 @@ export default async (
     if (error instanceof Error) {
       compiler.getInfrastructureLogger('CLI').error(error.message);
     }
+    logger(error?.toString());
     process.exit(1);
     process.chdir(cwd);
   }
