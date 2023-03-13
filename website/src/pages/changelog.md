@@ -1,3 +1,10 @@
+## [3.2.5](https://github.com/js-widgets/webpack-cli/compare/v3.2.4...v3.2.5) (2023-03-13)
+
+
+### Bug Fixes
+
+* add error message on exit 1. ([#251](https://github.com/js-widgets/webpack-cli/issues/251)) ([bc602d4](https://github.com/js-widgets/webpack-cli/commit/bc602d40495592a13c2703ec7b5e1175785fc05f)), closes [#250](https://github.com/js-widgets/webpack-cli/issues/250)
+
 ## [3.2.4](https://github.com/js-widgets/webpack-cli/compare/v3.2.3...v3.2.4) (2023-03-11)
 
 
