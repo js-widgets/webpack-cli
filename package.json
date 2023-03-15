@@ -67,6 +67,6 @@
     "glob": "^8.1.0",
     "mini-css-extract-plugin": "^2.7.3",
     "semver": "^7.3.8",
-    "webpack": "^5.76.1"
+    "webpack": "^5.76.2"
   }
 }
