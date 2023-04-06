@@ -1,3 +1,10 @@
+## [3.2.11](https://github.com/js-widgets/webpack-cli/compare/v3.2.10...v3.2.11) (2023-04-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency webpack to ^5.78.0 ([b4ac402](https://github.com/js-widgets/webpack-cli/commit/b4ac402ed219ac3a774a6fc18b929e75e7326344))
+
 ## [3.2.10](https://github.com/js-widgets/webpack-cli/compare/v3.2.9...v3.2.10) (2023-03-29)
 
 
