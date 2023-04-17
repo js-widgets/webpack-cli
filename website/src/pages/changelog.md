@@ -1,3 +1,10 @@
+## [3.2.15](https://github.com/js-widgets/webpack-cli/compare/v3.2.14...v3.2.15) (2023-04-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency semver to ^7.5.0 ([73ed891](https://github.com/js-widgets/webpack-cli/commit/73ed891521a49cd4cfe7ada3f738dccb9924cd2c))
+
 ## [3.2.14](https://github.com/js-widgets/webpack-cli/compare/v3.2.13...v3.2.14) (2023-04-15)
 
 
