@@ -7,7 +7,7 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=v18.16.0"
+    "node": ">=v18.17.1"
   },
   "main": "build/src/index.js",
   "bin": {
@@ -41,7 +41,7 @@
     "@types/debug": "4.1.8",
     "@types/glob": "8.1.0",
     "@types/jest": "27.5.2",
-    "@types/node": "18.16.18",
+    "@types/node": "18.17.12",
     "@types/semver": "7.5.0",
     "@typescript-eslint/eslint-plugin": "5.59.11",
     "@typescript-eslint/parser": "5.59.11",
