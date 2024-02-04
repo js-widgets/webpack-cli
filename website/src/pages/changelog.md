@@ -1,3 +1,10 @@
+## [3.2.35](https://github.com/js-widgets/webpack-cli/compare/v3.2.34...v3.2.35) (2024-02-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency webpack to ^5.90.1 ([3e69d86](https://github.com/js-widgets/webpack-cli/commit/3e69d8674a151f701826c2ffba33b00af6fca96c))
+
 ## [3.2.34](https://github.com/js-widgets/webpack-cli/compare/v3.2.33...v3.2.34) (2024-02-04)
 
 
