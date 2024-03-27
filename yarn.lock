@@ -911,17 +911,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/cli@npm:5.1.13":
-  version: 5.1.13
-  resolution: "@formatjs/cli@npm:5.1.13"
+"@formatjs/cli@npm:6.2.9":
+  version: 6.2.9
+  resolution: "@formatjs/cli@npm:6.2.9"
   peerDependencies:
-    "@vue/compiler-sfc": ^3.2.34
+    vue: ^3.4.0
   peerDependenciesMeta:
-    "@vue/compiler-sfc":
+    vue:
       optional: true
   bin:
     formatjs: bin/formatjs
-  checksum: 790712c6d6479c7c039beb845ffa0acf402a0550464c5cd8c75bac8335002165d4ae8c4d6630e0fa23215aa29df62689f055d21c420aaf5a320ad1146fd120c7
+  checksum: ea5caee93785dda1d4a3aed99069e5e0fd27d3a7ebf9bfb07aaefeb8e4c08f6714c5200473f8bbbe8edfe4df97ebc9d26ebe929916d3bd83c281fba52235e10d
   languageName: node
   linkType: hard
 
@@ -1271,7 +1271,7 @@ __metadata:
     "@babel/preset-typescript": 7.23.3
     "@commitlint/cli": 17.8.1
     "@commitlint/config-conventional": 17.8.1
-    "@formatjs/cli": 5.1.13
+    "@formatjs/cli": 6.2.9
     "@semantic-release/changelog": 6.0.3
     "@semantic-release/commit-analyzer": 9.0.2
     "@semantic-release/git": 10.0.1
