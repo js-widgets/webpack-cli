@@ -1288,7 +1288,7 @@ __metadata:
     "@types/debug": 4.1.12
     "@types/glob": 8.1.0
     "@types/jest": 27.5.2
-    "@types/node": 18.19.14
+    "@types/node": 18.19.30
     "@types/semver": 7.5.6
     "@typescript-eslint/eslint-plugin": 5.62.0
     "@typescript-eslint/parser": 5.62.0
@@ -2077,12 +2077,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.19.14":
-  version: 18.19.14
-  resolution: "@types/node@npm:18.19.14"
+"@types/node@npm:18.19.30":
+  version: 18.19.30
+  resolution: "@types/node@npm:18.19.30"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 3d42b50e649f18c6ca7044714eaeb51ba5fda463c845eeb1973bcbbfcab8e93179501fbf865e675cb0c7a5e59f7ea18eca8296b52c2455c856aa45c77ae815dc
+  checksum: b3daafa3fe23312f493fc2548c5e03801e1e4a5657af1f327ffae76087b64b926b84daf839297348a7e3c90aced10e3d66126270ad8081d32c979418d93c7828
   languageName: node
   linkType: hard
 
