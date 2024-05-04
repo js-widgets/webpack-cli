@@ -1,3 +1,10 @@
+## [3.2.40](https://github.com/js-widgets/webpack-cli/compare/v3.2.39...v3.2.40) (2024-05-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency mini-css-extract-plugin to ^2.9.0 ([8bfce0c](https://github.com/js-widgets/webpack-cli/commit/8bfce0c2acf3f56ae1832c158a5432b1ac0b9bf6))
+
 ## [3.2.39](https://github.com/js-widgets/webpack-cli/compare/v3.2.38...v3.2.39) (2024-05-04)
 
 
