@@ -1,3 +1,10 @@
+## [3.2.39](https://github.com/js-widgets/webpack-cli/compare/v3.2.38...v3.2.39) (2024-05-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ajv to ^8.13.0 ([71d61d6](https://github.com/js-widgets/webpack-cli/commit/71d61d6c0f6691ff53bdd5b59fa134ea817d179b))
+
 ## [3.2.38](https://github.com/js-widgets/webpack-cli/compare/v3.2.37...v3.2.38) (2024-04-06)
 
 
