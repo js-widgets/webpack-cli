@@ -973,17 +973,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/cli@npm:5.1.13":
-  version: 5.1.13
-  resolution: "@formatjs/cli@npm:5.1.13"
+"@formatjs/cli@npm:6.2.12":
+  version: 6.2.12
+  resolution: "@formatjs/cli@npm:6.2.12"
   peerDependencies:
-    "@vue/compiler-sfc": ^3.2.34
+    "@glimmer/env": ^0.1.7
+    "@glimmer/reference": ^0.91.1 || ^0.92.0
+    "@glimmer/syntax": ^0.92.0
+    "@glimmer/validator": ^0.92.0
+    "@vue/compiler-core": ^3.4.0
+    content-tag: ^2.0.1
+    ember-template-recast: ^6.1.4
+    vue: ^3.4.0
   peerDependenciesMeta:
-    "@vue/compiler-sfc":
+    "@glimmer/env":
+      optional: true
+    "@glimmer/reference":
+      optional: true
+    "@glimmer/syntax":
+      optional: true
+    "@glimmer/validator":
+      optional: true
+    "@vue/compiler-core":
+      optional: true
+    content-tag:
+      optional: true
+    ember-template-recast:
+      optional: true
+    vue:
       optional: true
   bin:
     formatjs: bin/formatjs
-  checksum: 790712c6d6479c7c039beb845ffa0acf402a0550464c5cd8c75bac8335002165d4ae8c4d6630e0fa23215aa29df62689f055d21c420aaf5a320ad1146fd120c7
+  checksum: f523dc51102e5f3cc7e26b99cf9e30c3a445e95131929f1278249c27d67f8f6beef2f466a08623be5839c87cc32847f1e624a35efab376180e7199372ee18158
   languageName: node
   linkType: hard
 
@@ -1361,7 +1382,7 @@ __metadata:
     "@babel/preset-typescript": 7.24.7
     "@commitlint/cli": 17.8.1
     "@commitlint/config-conventional": 17.8.1
-    "@formatjs/cli": 5.1.13
+    "@formatjs/cli": 6.2.12
     "@semantic-release/changelog": 6.0.3
     "@semantic-release/commit-analyzer": 9.0.2
     "@semantic-release/git": 10.0.1
