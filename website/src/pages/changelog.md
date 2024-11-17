@@ -1,3 +1,11 @@
+## [3.2.46](https://github.com/js-widgets/webpack-cli/compare/v3.2.45...v3.2.46) (2024-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ajv to ^8.17.1 ([#399](https://github.com/js-widgets/webpack-cli/issues/399)) ([9bcd42b](https://github.com/js-widgets/webpack-cli/commit/9bcd42bb661e1df4aa26d247d560dc7f37c75e30))
+* **deps:** update dependency webpack to ^5.96.1 ([#400](https://github.com/js-widgets/webpack-cli/issues/400)) ([9272f93](https://github.com/js-widgets/webpack-cli/commit/9272f93d9aedc6ee59d2166acfc3336765f5724a))
+
 ## [3.2.45](https://github.com/js-widgets/webpack-cli/compare/v3.2.44...v3.2.45) (2024-11-17)
 
 
