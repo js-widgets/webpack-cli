@@ -41,7 +41,7 @@
     "@types/debug": "4.1.12",
     "@types/glob": "8.1.0",
     "@types/jest": "27.5.2",
-    "@types/node": "18.19.64",
+    "@types/node": "18.19.70",
     "@types/semver": "7.5.8",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
