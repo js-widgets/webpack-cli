@@ -28,7 +28,7 @@
     "email": "mateu@mateuaguilo.com"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "7.26.0",
+    "@babel/preset-typescript": "7.28.5",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@formatjs/cli": "5.1.13",
