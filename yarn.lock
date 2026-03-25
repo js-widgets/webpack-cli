@@ -1335,7 +1335,7 @@ __metadata:
     husky: 8.0.3
     jest: 27.5.1
     lint-staged: 13.3.0
-    mini-css-extract-plugin: ^2.9.2
+    mini-css-extract-plugin: ^2.10.1
     prettier: 2.8.8
     semantic-release: 19.0.5
     semver: ^7.6.3
@@ -6775,15 +6775,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^2.9.2":
-  version: 2.9.2
-  resolution: "mini-css-extract-plugin@npm:2.9.2"
+"mini-css-extract-plugin@npm:^2.10.1":
+  version: 2.10.1
+  resolution: "mini-css-extract-plugin@npm:2.10.1"
   dependencies:
     schema-utils: ^4.0.0
     tapable: ^2.2.1
   peerDependencies:
     webpack: ^5.0.0
-  checksum: 67a1f75359371a7776108999d472ae0942ccd904401e364e3a2c710d4b6fec61c4f53288594fcac35891f009e6df8825a00dfd3bfe4bcec0f862081d1f7cad50
+  checksum: da1aa2b058d238f364022ea00d242e6c1fa398e6dd38d1c1e0d960aa66cdd0f070afc85b4d6e0df6febe8b48e6ee19d325250460ae0e3a2aa365837ca20b7af2
   languageName: node
   linkType: hard
 
