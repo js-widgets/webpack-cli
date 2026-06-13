@@ -911,17 +911,94 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/cli@npm:5.1.13":
-  version: 5.1.13
-  resolution: "@formatjs/cli@npm:5.1.13"
+"@formatjs/cli-native-darwin-arm64@npm:1.1.5":
+  version: 1.1.5
+  resolution: "@formatjs/cli-native-darwin-arm64@npm:1.1.5"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@formatjs/cli-native-linux-arm64-musl@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@formatjs/cli-native-linux-arm64-musl@npm:1.0.3"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@formatjs/cli-native-linux-arm64@npm:1.2.5":
+  version: 1.2.5
+  resolution: "@formatjs/cli-native-linux-arm64@npm:1.2.5"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@formatjs/cli-native-linux-x64-musl@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@formatjs/cli-native-linux-x64-musl@npm:1.0.3"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@formatjs/cli-native-linux-x64@npm:1.1.5":
+  version: 1.1.5
+  resolution: "@formatjs/cli-native-linux-x64@npm:1.1.5"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@formatjs/cli-native-win32-x64@npm:1.1.6":
+  version: 1.1.6
+  resolution: "@formatjs/cli-native-win32-x64@npm:1.1.6"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@formatjs/cli@npm:6.16.11":
+  version: 6.16.11
+  resolution: "@formatjs/cli@npm:6.16.11"
+  dependencies:
+    "@formatjs/cli-native-darwin-arm64": 1.1.5
+    "@formatjs/cli-native-linux-arm64": 1.2.5
+    "@formatjs/cli-native-linux-arm64-musl": 1.0.3
+    "@formatjs/cli-native-linux-x64": 1.1.5
+    "@formatjs/cli-native-linux-x64-musl": 1.0.3
+    "@formatjs/cli-native-win32-x64": 1.1.6
   peerDependencies:
-    "@vue/compiler-sfc": ^3.2.34
+    "@glimmer/syntax": ^0.84.3 || ^0.95.0
+    "@vue/compiler-core": ^3.5.0
+    content-tag: ^4.1.0
+    vue: ^3.5.0
+  dependenciesMeta:
+    "@formatjs/cli-native-darwin-arm64":
+      optional: true
+    "@formatjs/cli-native-linux-arm64":
+      optional: true
+    "@formatjs/cli-native-linux-arm64-musl":
+      optional: true
+    "@formatjs/cli-native-linux-x64":
+      optional: true
+    "@formatjs/cli-native-linux-x64-musl":
+      optional: true
+    "@formatjs/cli-native-win32-x64":
+      optional: true
   peerDependenciesMeta:
-    "@vue/compiler-sfc":
+    "@glimmer/env":
+      optional: true
+    "@glimmer/reference":
+      optional: true
+    "@glimmer/syntax":
+      optional: true
+    "@glimmer/validator":
+      optional: true
+    "@vue/compiler-core":
+      optional: true
+    content-tag:
+      optional: true
+    vue:
       optional: true
   bin:
     formatjs: bin/formatjs
-  checksum: 790712c6d6479c7c039beb845ffa0acf402a0550464c5cd8c75bac8335002165d4ae8c4d6630e0fa23215aa29df62689f055d21c420aaf5a320ad1146fd120c7
+  checksum: ebe16d9ec00be524f14c8323fc4e35b280ba37ab68116ca47a52df31c4808b1785523b2a0a78b9ca8d23281f1e959ac946d38e9e933f4f6510396927820f990a
   languageName: node
   linkType: hard
 
@@ -1298,7 +1375,7 @@ __metadata:
     "@babel/preset-typescript": 7.28.5
     "@commitlint/cli": 19.8.1
     "@commitlint/config-conventional": 19.8.1
-    "@formatjs/cli": 5.1.13
+    "@formatjs/cli": 6.16.11
     "@semantic-release/changelog": 6.0.3
     "@semantic-release/commit-analyzer": 9.0.2
     "@semantic-release/git": 10.0.1
